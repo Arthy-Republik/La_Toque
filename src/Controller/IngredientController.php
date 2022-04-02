@@ -87,6 +87,9 @@ class IngredientController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+        /*  This controller show a form which delete an ingredient
+    */
+
     #[Route('/ingredient/suppression/{id}', name:'ingredient.delete', methods:['GET'])]
     public function delete(EntityManagerInterface $manager, Ingredient $ingredient): Response
     {
