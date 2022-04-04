@@ -48,10 +48,10 @@
                             </td>
                             <td>{{ recipe.createdAt|date('d/m/y') }}</td>
                             <td>
-                                 Todo
+                                   <a href="{{ path('recipe.edit', { id: recipe.id }) }}" class="btn btn-info">Mofifier</a> 
                             </td>
                             <td>
-                                 Todo
+                                   <a href="{{ path('recipe.delete', { id: recipe.id }) }}" class="btn btn-warning">Supprimer</a>  
                             </td>
                          </tr>
                     {% endfor %}

@@ -13,7 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[UniqueEntity('name')]
-#[HasLifecycleCallbacks]
+#[Entity, HasLifecycleCallbacks]
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
 class Recipe
 {
@@ -56,6 +56,7 @@ class Recipe
     private $ingredients;
 
     #[ORM\Column(type: 'datetime_immutable')]
+    #[Assert\NotNull()]
     private $createdAt;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
@@ -64,7 +65,7 @@ class Recipe
     public function __construct()
     {
         $this->ingredients = new ArrayCollection();
-    
+        $this->createdAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int

@@ -18,7 +18,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Webmozart\Assert\Assert as AssertAssert;
 
 class RecipeType extends AbstractType
 {
@@ -114,17 +114,17 @@ class RecipeType extends AbstractType
             ])
              ->add('isFavorite', CheckboxType::class,[ 
                 'attr' => [ 
-                    'class' => 'form-control',
+                    'class' => 'form-check-input',
               ],
                 'required' => false,
                 'label' => 'Favoris ? ',
                 'label_attr' => [
-                    'class' => 'form-label mt-4'
+                    'class' => 'form--check-label'
                 ],
                 'constraints' => [ 
-                   new Assert\NotNull()
-                   
+                    new Assert\NotNull()
                 ]
+            
              ])
             ->add('ingredients', EntityType::class, [
                 'class' => Ingredient::class,
@@ -140,7 +140,12 @@ class RecipeType extends AbstractType
                 'multiple' => true,
                 'expanded' => true
             ])
-            ->add('submit', SubmitType::class)
+            ->add('submit', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-primary mt-4'
+            ],
+                'label' => 'Modifier ma recette'
+            ])
         ;
     
     }
