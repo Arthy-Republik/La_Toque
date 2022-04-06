@@ -7,19 +7,24 @@ use App\Form\RecipeType;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class RecipeController extends AbstractController
 {
+    /**
+     * This controller dislay all recipes
+     */
+
+    #[IsGranted('ROLE_USER')]
     #[Route('/recette', name: 'recipe.index', methods:['GET'])]
     public function index(RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        /**
-         * This controller dislay all recipes
-         */
+     
         {
             $recipes = $paginator->paginate(
                 $recipeRepository->findAll(),
@@ -33,9 +38,36 @@ class RecipeController extends AbstractController
         }
     }
 
-    /**
-    * This controller allow us to creat a new recipe
+    #[Route('/recette/publique', 'recipe.index.public', methods: ['GET'])]
+    public function public(RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request ) : Response 
+    {
+        $recipes = $paginator->paginate(
+            $recipeRepository->findPublicRecipe(50),
+            $request->query->getInt('page', 1), 
+            10 /*limit per page*/
+        );
+
+        return $this->render('pages/recipe/public.html.twig', [ 
+            'recipes' => $recipes
+        ]);
+    }
+
+      /**
+    * This controller allow us to see a recipe is public or not 
     */
+    // #[Security("is_granted('ROLE_USER') and recipe.getIsPublic() === true")]
+    #[Route('/recette/{id}', name:'recipe.show', methods: ['GET'])]
+    public function show(Recipe $recipe) : Response
+    {
+        return $this->render('pages/recipe/show.html.twig', [ 
+            'recipe' => $recipe
+        ]);
+    }
+
+    /**
+    * This controller allow us to create a new recipe
+    */
+    #[IsGranted('ROLE_USER')]
     #[Route('/recette/creation', name: 'recipe.new', methods:['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $manager) : Response
     {
@@ -65,6 +97,9 @@ class RecipeController extends AbstractController
     /**
    * This controller allow us to edit a recipe
    */
+
+   // j'autorise uniquement l'accés a cette page si l'utilisateur courant est l'utilisateur qui correspond à la recette
+  #[Security("is_granted('ROLE_USER') and user === recipe.getUser()")]
     #[Route('/recette/edition/{id}', name:'recipe.edit', methods:['GET', 'POST'])]
     public function edit(Recipe $recipe, Request $request, EntityManagerInterface $manager) : Response
     {
@@ -76,7 +111,7 @@ class RecipeController extends AbstractController
             $manager ->persist($recipe);
             $manager->flush();
 
-                //ajout de message flash 
+        //ajout de message flash 
           $this->addFlash(
             'Success',
             'Votre recette a été modifié avec succés !'

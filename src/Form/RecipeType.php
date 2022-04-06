@@ -16,9 +16,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
-use Symfony\Component\Validator\Constraints as Assert;
 use Webmozart\Assert\Assert as AssertAssert;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class RecipeType extends AbstractType
 {
@@ -38,7 +37,7 @@ class RecipeType extends AbstractType
                   'constraints' => [ 
                     new Assert\Length(['min' => 2, 'max' => 50]),
                     new Assert\NotBlank()
-            ]
+                ]
             ])
             ->add('time', IntegerType::class, [
                 'attr' => [

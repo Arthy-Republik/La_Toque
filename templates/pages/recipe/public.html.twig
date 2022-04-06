@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La Toque - Les recettes de la communauté{% endblock %}
+
+{% block body %}
+  <div class="container mt-4" >
+   {% if not recipes.items is same as ([]) %}
+      <h1 class="m-4"> Les recettes de la communauté</h1>
+
+     <div class="d-flex flex-wrap">
+      {% for recipe in recipes %}
+        <div class="card border-dark m-2" style="max-width: 20rem;">
+        <div class="card-header"> Recette n° {{ recipe.id }} </div>
+          <div class="card-body">
+            <h4 class="card-title">{{ recipe.name }}</h4>
+            <p class="card-text">{{ recipe.description|slice(0, 100 ) ~ '...' }}</p>
+          </div>
+     </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    </div>
+{% endblock %}

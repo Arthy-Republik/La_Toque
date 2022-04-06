@@ -62,6 +62,13 @@ class Recipe
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $updatedAt;
 
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'recipes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $user;
+
+    #[ORM\Column(type: 'boolean')]
+    private $isPublic;
+
     public function __construct()
     {
         $this->ingredients = new ArrayCollection();
@@ -157,8 +164,6 @@ class Recipe
         return $this;
     }
 
-    
-
     /**
      * @return Collection<int, Ingredient>
      */
@@ -217,6 +222,30 @@ class Recipe
     public function setUpdatedAtValue(): void
     {
         $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getIsPublic(): ?bool
+    {
+        return $this->isPublic;
+    }
+
+    public function setIsPublic(bool $isPublic): self
+    {
+        $this->isPublic = $isPublic;
+
+        return $this;
     }
 
 }

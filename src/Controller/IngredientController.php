@@ -7,19 +7,21 @@ use App\Form\IngredientType;
 use App\Repository\IngredientRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class IngredientController extends AbstractController
 {
         /**
      * This controller allow us to display an ingredient
      */
+    #[IsGranted('ROLE_USER')]
     #[Route('/ingredient', name: 'ingredient.index', methods: ['GET'])]
     //injection de dépendance = injecter un service dans les parametres de la function ici ingredient repo qui se trouve dans le repo ingredient
-
     public function index(IngredientRepository $ingredientRepository, PaginatorInterface $paginator, Request $request): Response
     {
         $ingredients = $paginator->paginate(
@@ -35,6 +37,7 @@ class IngredientController extends AbstractController
     /**
      * This controller allow us to create an ingredient
      */
+    #[IsGranted('ROLE_USER')]
     #[Route('/ingredient/nouveau', name: 'ingredient.new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $manager) : Response
     {
@@ -66,6 +69,8 @@ class IngredientController extends AbstractController
     /**
      * This controller allow us to update an ingredient
      */
+        // on veut seulement que les personnes connecter avec un role user et que l'utilisateur courannt soit responsable de l'ingrédient en question. On recupere ingrdient dans le $ingredient plus bas ( parametre de la fonction) et on on recupere le uuser dans le $user dans ingredient.php mais commme il est en priate on le recupere avec le getUser.
+    #[Security("is_granted('ROLE_USER') and user === ingredient.getUser()")]
     #[Route('/ingredient/edition/{id}', name:'ingredient.edit', methods: ['GET', 'POST'])]
     public function edit(Ingredient $ingredient, Request $request, EntityManagerInterface $manager) : Response
     {
