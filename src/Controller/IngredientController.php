@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class IngredientController extends AbstractController
@@ -25,7 +24,7 @@ class IngredientController extends AbstractController
     public function index(IngredientRepository $ingredientRepository, PaginatorInterface $paginator, Request $request): Response
     {
         $ingredients = $paginator->paginate(
-            $ingredientRepository->findAll(),
+            $ingredientRepository->findBy(['user' => $this->getUser()]),
             $request->query->getInt('page', 1), 
             10 /*limit per page*/
         );
@@ -47,12 +46,13 @@ class IngredientController extends AbstractController
         $form ->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) { 
             $ingredient = $form ->getData();
+            $ingredient->setUser($this->getUser());
 
-            //on dit au manager de persister la donnée = elle doit s'ajouter à la BDD , le flush permet de l'enoyer en BDD
+            
             $manager ->persist($ingredient);
             $manager->flush();
 
-        //ajout de message flash 
+        //flash message
           $this->addFlash(
               'success',
               'Votre ingrédient a été crée avec succés !'
@@ -70,7 +70,7 @@ class IngredientController extends AbstractController
      * This controller allow us to update an ingredient
      */
         // on veut seulement que les personnes connecter avec un role user et que l'utilisateur courannt soit responsable de l'ingrédient en question. On recupere ingrdient dans le $ingredient plus bas ( parametre de la fonction) et on on recupere le uuser dans le $user dans ingredient.php mais commme il est en priate on le recupere avec le getUser.
-    #[Security("is_granted('ROLE_USER') and user === ingredient.getUser()")]
+    #[IsGranted('ROLE_USER')]
     #[Route('/ingredient/edition/{id}', name:'ingredient.edit', methods: ['GET', 'POST'])]
     public function edit(Ingredient $ingredient, Request $request, EntityManagerInterface $manager) : Response
     {

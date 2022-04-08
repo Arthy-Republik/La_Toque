@@ -25,6 +25,7 @@
                         <th scope="col">Prix</th>
                         <th scope="col">Difficulté</th>
                         <th scope="col">Date de création</th>
+                         <th scope="col">Description</th>
                         <th scope="col">Edition</th>
                         <th scope="col">Suppression</th>
                     </tr>
@@ -32,7 +33,7 @@
                  <tbody>
                     {% for recipe in recipes %}
                         <tr class="table-primary">
-                           <th class="row ">{{ recipe.id }}</th>
+                           <th>{{ recipe.id }}</th>
                             <td>{{ recipe.name }}</td>
                             <td>
                             {% if recipe.price is null %} Non renseigné 
@@ -48,7 +49,10 @@
                             </td>
                             <td>{{ recipe.createdAt|date('d/m/y') }}</td>
                             <td>
-                                   <a href="{{ path('recipe.edit', { id: recipe.id }) }}" class="btn btn-info">Mofifier</a> 
+                                   <a href="{{ path('recipe.show', { id: recipe.id }) }}" class="btn btn-info">Description</a> 
+                            </td>
+                            <td>
+                                   <a href="{{ path('recipe.edit', { id: recipe.id }) }}" class="btn btn-info">Modifier</a> 
                             </td>
                             <td>
                                    <a href="{{ path('recipe.delete', { id: recipe.id }) }}" class="btn btn-warning">Supprimer</a>  
@@ -62,6 +66,7 @@
             </div>
               {% else %}
         <h4>Il n'y a pas de recette</h4>
+         <a href="{{ path('recipe.new') }}" class="btn btn-primary"> Créer une recette</a>
         {% endif %}
      </div>
 {% endblock %}

@@ -44,16 +44,15 @@ class RecipeRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
-        // requete DQL . this method allow us to find public recipes based on number of recipes
-        
+    // requete DQL . this method allow us to find public recipes based on number of recipes
     public function findPublicRecipe(int $nbRecipes) : array 
     {
-            return $this->createQueryBuilder('r')
-                ->where('r.isPublic = 1')
-                ->orderBy('r.createdAt', 'DESC')
-                ->setMaxResults($nbRecipes)
-                ->getQuery()
-                ->getResult();
+        return $this->createQueryBuilder('r')
+            ->where('r.isPublic = 1') // 1 = public 
+            ->orderBy('r.createdAt', 'DESC') // de la moins recentes à la plus récente
+            ->setMaxResults($nbRecipes) // =nb de recettes max 
+            ->getQuery()
+            ->getResult();
     }
     // /**
     //  * @return Recipe[] Returns an array of Recipe objects

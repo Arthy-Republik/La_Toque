@@ -19,14 +19,11 @@ class SecurityController extends AbstractController
     {
         // if ($this->getUser()) {
         //     return $this->redirectToRoute('target_path');
-        // }
-
-     
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
            // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-
+            
         return $this->render('pages/security/login.html.twig', [
             'last_username' => $lastUsername, 'error' => $error]);
     }
@@ -47,7 +44,7 @@ class SecurityController extends AbstractController
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
-            //recupération du mot de pass
+        //recupération du mot de pass
         $plaintextPassword = $user->getPassword();
         //hachage du mot de passe
         $hashedPassword = $passwordHasher->hashPassword(

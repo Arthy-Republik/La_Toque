@@ -3,7 +3,8 @@ security:
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
-      
+        App\Entity\User:
+            algorithm: auto
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         # used to reload user from session & other features (e.g. switch_user)
@@ -16,13 +17,16 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            form_login:
+                enable_csrf: true
+                login_path: security.login
+                check_path: security.login
             lazy: true
             provider: app_user_provider
-            custom_authenticator: App\Security\AppCustomAuthentificatorAuthenticator
             logout:
-                path: app_logout
+                path: security.logout
         
-
+            # custom_authenticator: App\Security\AppCustomAuthentificatorAuthenticator
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 

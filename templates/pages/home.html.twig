@@ -3,20 +3,18 @@
 {% block title %}La Toque - Accueil {% endblock %}
 
 {% block body %}
-  <div class="container mt-4" >
+ {% if app.user %}
+<div class="container mt-4 " >
     <div class="jumbotron">
-      <h1 class="display-4">Bienvenue sur La Toque</h1>
-      <p class="lead">La Toque est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi meme créer. <br> Tu pourras partager tes recettes à la communauté La Toque , ou bien les garder pour toi, en privées.</p>
+      <h1 class="display-4">La Toque te souhaite la Bienvenue</h1>
+      <p class="lead">La Toque est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi meme créer. <br> Tu pourras si tu le souhaites ajouter, modifier et supprimer tes ingrédients puis composer tes recettes au choix en fonction de tes ingrédients</p>
       <hr class="my-4">
-      <p>Pour commencer, rendez vous sur la page d'inscription pour utiliser l'application.</p>
-      <a class="btn btn-primary btn-lg" href="{{ path('security.registration') }}" role="button">Inscription</a>
   </div>
-
     <div class="recipes" >
-      <h2 class="mt-4"> Les recettes de la communauté</h2>
+      <h2 class="mt-4"> En manque d'inspiration ? Voici quelques exemples des recettes de la communauté</h2>
      <div class="d-flex justify-content-between">
         {% for recipe in recipes %}
-          <div class="card text-white bg-info mt-3" style="max-width: 20rem;">
+          <div class="card bg-light mt-4" style="max-width: 20rem;">
             <div class="card-header"> Recette n° {{ recipe.id }} </div>
             <div class="card-body">
               <h4 class="card-title">{{ recipe.name }}</h4>
@@ -24,7 +22,34 @@
             </div>
           </div>
         {% endfor %}
-      </div>
-    </div>
   </div>
+   {% else %}
+  <div class="container mt-4 " >
+    <div class="jumbotron">
+      <h1 class="display-4">Bienvenue sur La Toque</h1>
+      <p class="lead">La Toque est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi meme créer. <br> Tu pourras partager tes recettes à la communauté La Toque , ou bien les garder pour toi, en privées.</p>
+      <hr class="my-4">
+      <p class="lead">Pour commencer, rendez vous sur la page d'inscription pour utiliser l'application.</p>
+      <a class="btn btn-primary btn-lg" href="{{ path('security.registration') }}" role="button">Inscription</a>
+  </div>
+
+    <div class="recipes" >
+      <h2 class="mt-4"> Les recettes de la communauté</h2>
+     <div class="d-flex justify-content-between">
+        {% for recipe in recipes %}
+          <div class="card bg-light mt-4" style="max-width: 15rem;">
+            <div class="card-header"> Recette n° {{ recipe.id }} </div>
+            <div class="card-body">
+              <h4 class="card-title">{{ recipe.name }}</h4>
+              <p class="card-text">{{ recipe.description|slice(0, 100 ) ~ '...' }}</p>
+            </div>
+          </div>
+        {% endfor %}
+   {% endif %}
+      </div>
+      <p class="mt-4"><a class="btn btn-primary btn-lg" href="{{ path('recipe.public') }}" role="button">Plus de recettes ici</a></p>
+    </div>
+     
+  </div>
+ 
 {% endblock %}

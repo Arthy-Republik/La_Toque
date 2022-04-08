@@ -1,0 +1,26 @@
+body {
+ margin: 0;
+ padding: 0;
+ background-image: url('../img/tamanna-rumee-OstMKA7GaJ8-unsplash.jpg');
+ background-position: center;
+     background-size: cover;
+   
+}
+/* 
+.flex-footer { 
+padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+text-align: center;
+  
+}
+ p {
+  
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+} */

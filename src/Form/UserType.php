@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -43,15 +42,6 @@ class UserType extends AbstractType
             ],
                 'constraints' => [ 
                 new Assert\Length(['min' => 2, 'max' => 50]),
-            ]
-        ])
-        ->add('password', PasswordType::class, [ 
-            'attr' => [
-                'class' => 'form-control',
-            ],
-                'label' => 'Mot de passe',
-                'label_attr' => [ 
-                'class' => 'form_label mt-4' 
             ]
         ])
         ->add('submit', SubmitType::class, [ 

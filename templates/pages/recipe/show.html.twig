@@ -7,6 +7,10 @@
 <div class="container"> 
 
   <h1 class="mt-4">{{ recipe.name }}</h1>
+
+<div class="recipe_image">
+<img style="max-width:500px;" style="height:300px;" src="{{ vich_uploader_asset(recipe,'imageFile') }}">
+</div>
     <div>
       <span class="badge bg-primary">Crée le {{ recipe.createdAt|date('d/m/Y') }}</span>
     </div>

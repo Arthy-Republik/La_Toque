@@ -34,7 +34,7 @@
                  <tbody>
                     {% for ingredient in ingredients %}
                         <tr class="table-primary">
-                           <td>{{ ingredient.id }}</td>
+                           <th>{{ ingredient.id }}</th>
                             <td>{{ ingredient.name }}</td>
                             <td>{{ ingredient.price }}</td>
                             <td>{{ ingredient.createdAt|date('d/m/y') }}</td>
@@ -53,6 +53,9 @@
             </div>
         {% else %}
         <h4>Il n'y a pas d'ingrédient</h4>
+           <a href ="{{ path('ingredient.new') }}" class="btn btn-primary">
+           créer un ingredient
+           </a>
         {% endif %}
      </div>
 {% endblock %}
