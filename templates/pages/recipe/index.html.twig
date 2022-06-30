@@ -1,72 +1,156 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}La Toque - Mes recettes{% endblock %}
+{% block title %}
+  La Toque - Mes recettes
+{% endblock %}
 
 {% block body %}
-     <div class="container mt-4" >
-        {% if not recipes.items is same as ([]) %}
-           <h1> Mes recettes</h1>
-            <a href="{{ path('recipe.new') }}" class="btn btn-primary"> Créer une recette</a>
+  {% block header %}
+    {% include 'commons/_header.html.twig' %}
+  {% endblock %}
+  <div class="container-recipe">
+    {% if recipes.items is not same as([]) %}
+      <h1 class="recipeIndex-title">
+        Mes recettes
+      </h1>
+      {# <h4>Il n'y a pas de recette</h4> #}
+      {# <a href="{{ path('recipe.new') }}" class="btn btn-primary"> Créer une recette</a> #}
+      {# <h2> <a href="{{ path('recipe.new') }}" class="recipeIndexTitle"> Créer une recette</a></h2 #}
 
-            {% for message in app.flashes('success') %}
-          <div class=" alert alert-success mt-4">
+      {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
           {{ message }}
-          </div>
-          {% endfor %}
+        </div>
+      {% endfor %}
 
-             <div class="count mt-4" >
-             <h4> Il y'a {{ recipes.getTotalItemCount  }} recette(s) </h4>
+      <div class="countIndex-title">
+        <h2>
+          Il y'a {{ recipes.getTotalItemCount }} recette(s) cliquez <span>
+            <a href="{{ path('recipe.new') }}" class="recipeIndexTitle">ICI</a>
+          </span> pour ajouter des recettes
+        </h2>
+      </div>
+      <div class="recipe-container">
+        {% for recipe in recipes %}
+          <div class="recipe-card h-index">
+            <figure>
+              <img src="{{ vich_uploader_asset(recipe, 'imageFile') }}"
+                alt="ACME logo" />
+            </figure>
+            <div class="card-meta">
+              <div class="recipe-number">
+                Recette n° {{ recipe.id }}
+              </div>
 
-            <table class="table table-hover mt-4">
-                <thead>
-                    <tr>
-                        <th scope="col">Numéro</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Prix</th>
-                        <th scope="col">Difficulté</th>
-                        <th scope="col">Date de création</th>
-                         <th scope="col">Description</th>
-                        <th scope="col">Edition</th>
-                        <th scope="col">Suppression</th>
-                    </tr>
-                </thead>
-                 <tbody>
-                    {% for recipe in recipes %}
-                        <tr class="table-primary">
-                           <th>{{ recipe.id }}</th>
-                            <td>{{ recipe.name }}</td>
-                            <td>
-                            {% if recipe.price is null %} Non renseigné 
-                            {% else %} 
-                            {{ recipe.price }}
-                            {% endif %}
-                            </td>
-                            <td>
-                            {% if recipe.difficulty is null %} Non renseigné 
-                            {% else %} 
-                            {{ recipe.difficulty }}
-                            {% endif %}
-                            </td>
-                            <td>{{ recipe.createdAt|date('d/m/y') }}</td>
-                            <td>
-                                   <a href="{{ path('recipe.show', { id: recipe.id }) }}" class="btn btn-info">Description</a> 
-                            </td>
-                            <td>
-                                   <a href="{{ path('recipe.edit', { id: recipe.id }) }}" class="btn btn-info">Modifier</a> 
-                            </td>
-                            <td>
-                                   <a href="{{ path('recipe.delete', { id: recipe.id }) }}" class="btn btn-warning">Supprimer</a>  
-                            </td>
-                         </tr>
-                    {% endfor %}
-                </tbody>
-             </table>
+              <ul class="dish-stats">
+                <li></li>
+                <li>
+                  <svg width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 2C4.6875 2 2 4.6875 2 8C2 11.3125 4.6875 14 8 14C11.3125 14 14 11.3125 14 8C14 4.6875 11.3125 2 8 2Z"
+                      stroke-miterlimit="10" />
+                    <path d="M8 4V8.5H11"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                  {{ recipe.time }} min
+                </li>
+                <li>
+                  <svg width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.9713 2.5C7.00005 2.5 8.00005 4.5 8.00005 4.5C8.00005 4.5 9.00005 2.5 11.0288 2.5C12.6775 2.5 13.9832 3.87937 14 5.52531C14.0344 8.94187 11.2897 11.3716 8.2813 13.4134C8.19836 13.4699 8.10036 13.5 8.00005 13.5C7.89973 13.5 7.80174 13.4699 7.7188 13.4134C4.71067 11.3716 1.96598 8.94187 2.00005 5.52531C2.01692 3.87937 3.32255 2.5 4.9713 2.5Z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>Pour {{ recipe.nbPeople }} px
+                </li>
+                {# <li> 
+          {{ recipe.createdAt|date('d/m/y') }}
+          </li> #}
+              </ul>
+            </div>
+
+            <!-- end card-meta -->
+            {# {% endfor %}
              <div class="navigation d-flex justify-content-center mt-4">
                 {{ knp_pagination_render(recipes) }}
+            </div> #}
+
+            <h4 class="card-title">
+              {{ recipe.name }}
+            </h4>
+            <div class="btn-indexRecipe">
+              <a href="{{
+                path(
+                  'recipe.show',
+                  {
+                    id: recipe.id
+                  }
+                )
+                }}"
+                class="btnIndex btn-info">
+                Description
+              </a>
+              <a href="{{
+                path(
+                  'recipe.edit',
+                  {
+                    id: recipe.id
+                  }
+                )
+                }}"
+                class="btnIndex btn-update">
+                Modifier
+              </a>
+              <a href="{{
+                path(
+                  'recipe.delete',
+                  {
+                    id: recipe.id
+                  }
+                )
+                }}"
+                class="btnIndex btn-delete">
+                Supprimer
+              </a>
             </div>
-              {% else %}
-        <h4>Il n'y a pas de recette</h4>
-         <a href="{{ path('recipe.new') }}" class="btn btn-primary"> Créer une recette</a>
-        {% endif %}
-     </div>
+            {# <p class="card-text">{{ recipe.description|slice(0, 100 ) ~ '...' }}</p> #}
+          </div> <!-- end recipe-card -->
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="reciperGrid-container">
+        <div class="noReciperGrid-container">
+          <h1 class="recipeIndex-title">
+            Mes recettes
+          </h1>
+          <h2 class="noRecipeIndex-h2">
+            OH non, vous n'avez pas encore de recette !
+          </h2>
+          <a href="{{ path('recipe.new') }}" class="btnNewRecipe">
+            Créer une recette
+          </a>
+        </div>
+        <div class="img-grid noRecipeImg">
+          <div class="img-1 picture noRecipePicture">
+            <span class="span-text noRecipeText">Taste</span>
+          </div>
+          <div class="img-2 picture noRecipePicture">
+            <span class="span-text noRecipeText">Discover</span>
+          </div>
+          <div class="img-3 picture noRecipePicture">
+            <span class="span-text noRecipeText">Share</span>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  {% block footer %}
+    {% include 'commons/_footer.html.twig' %}
+  {% endblock %}
 {% endblock %}

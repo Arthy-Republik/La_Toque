@@ -1,0 +1,71 @@
+.registration-container {
+  background-repeat: repeat;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  .registration-grid {
+    background-color: #fc5c6485;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // text-align: center;
+    align-items: center;
+
+    .registration-h1 {
+      font-size: 3rem;
+      font-weight: 400;
+      padding: 30px;
+      padding-bottom: 80px;
+    }
+    #registration {
+      gap: 20px;
+      line-height: 40px;
+      border: 2px solid #9bcadc;
+      border-radius: 5px;
+      padding: 50px;
+
+      .form_label {
+        font-size: 1.2rem;
+        text-align: left;
+        text-align: left;
+        padding-bottom: 20px;
+      }
+
+      .form-control {
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        margin-left: 20px;
+        border-bottom: 1px solid rgb(27, 26, 26);
+        
+        .input {
+          background-color: transparent;
+        }
+      }
+      .form-btn-registration {
+        font-size: 1rem;
+        border: 1px solid salmon;
+        border-radius: 8px;
+        padding: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-top: 20px;
+        position: relative;
+        left: 0;
+        background: #9bcadc;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .right-registration-img {
+    background-image: url(../images/brooke-lark-pinapple.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+  }
+}

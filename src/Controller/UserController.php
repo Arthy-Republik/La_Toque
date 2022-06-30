@@ -32,7 +32,7 @@ class UserController extends AbstractController
                 'Les informations de votre compte ont bien été modifiées'
             );
 
-            return $this->redirectToRoute('recipe.index');
+            return $this->redirectToRoute('home.index');
         } 
     
         return $this->render('pages/user/edit.html.twig', [

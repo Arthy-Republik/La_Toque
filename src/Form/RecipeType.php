@@ -39,9 +39,9 @@ class RecipeType extends AbstractType
                     'minlength' => '2',
                     'maxlength' => '50'
                 ], 
-                    'label' => 'Nom',
+                    'label' => 'Nom de la recette ',
                     'label_attr' => [
-                    'class' => 'form-label mt-4'
+                    'class' => 'form-label'
                 ],
                   'constraints' => [ 
                     new Assert\Length(['min' => 2, 'max' => 50]),
@@ -54,9 +54,9 @@ class RecipeType extends AbstractType
                     'min' => 1,
                     'max' => 1440
                 ],
-                'label' => 'Temps (en minutes)',
+                'label' => 'Temps (en minutes) ',
                 'label_attr' => [ 
-                    'class' => 'form-label mt-4'
+                    'class' => 'form-label '
                 ],
                 'constraints' => [
                     new Assert\Positive(),
@@ -69,9 +69,9 @@ class RecipeType extends AbstractType
                     'min' => 1,
                     'max' => 50
                 ],
-                'label' => 'Nombre de personnes',
+                'label' => 'Nombre de personne(s) ',
                 'label_attr' => [ 
-                    'class' => 'form-label mt-4'
+                    'class' => 'form-label'
                 ],
                 'constraints' => [
                     new Assert\Positive(),
@@ -84,13 +84,13 @@ class RecipeType extends AbstractType
                     'min' => 1,
                     'max' => 5
                     ],
-                    'label' => 'Difficulté',
+                    'label' => 'Difficulté /5',
                     'label_attr' => [ 
-                        'class' => 'form-label mt-4'
+                        'class' => 'form-label'
                     ],
                     'constraints' => [
                         new Assert\Positive(),
-                        new Assert\LessThan(5)
+                        new Assert\LessThan(6)
                     ]
             ])
             ->add('description', TextareaType::class, [ 
@@ -99,9 +99,9 @@ class RecipeType extends AbstractType
                     'min' => 1,
                     'max' => 50
                     ],
-                    'label' => 'Description',
+                    'label' => 'Description de la recette  ',
                     'label_attr' => [ 
-                        'class' => 'form-label mt-4'
+                        'class' => 'form-label'
                     ],
                     'constraints' => [
                         new Assert\NotBlank()
@@ -111,9 +111,9 @@ class RecipeType extends AbstractType
                 'attr' => [ 
                     'class' => 'form-control',
               ],
-                'label' => 'Prix ',
+                'label' => 'Prix en €  ',
                 'label_attr' => [
-                    'class' => 'form-label mt-4'
+                    'class' => 'form-label'
                 ],
                 'constraints' => [ 
                     new Assert\Positive(),
@@ -127,7 +127,7 @@ class RecipeType extends AbstractType
                 'required' => false,
                 'label' => 'Voulez vous la mettre en favorite ? ',
                 'label_attr' => [
-                    'class' => 'form--check-label'
+                    'class' => 'form-label'
                 ],
                 'constraints' => [ 
                     new Assert\NotNull()
@@ -135,12 +135,12 @@ class RecipeType extends AbstractType
              ])
              ->add('isPublic', CheckboxType::class,[ 
                 'attr' => [ 
-                    'class' => 'form-check-input',
+                    'class' => 'form-check-input-public',
               ],
                 'required' => false,
-                'label' => 'Voulez vous que votre recette soit partagé avec la communauté La Toque? ',
+                'label' => 'Voulez vous que votre recette soit partagé avec la communauté La Toque ? ',
                 'label_attr' => [
-                    'class' => 'form--check-label'
+                    'class' => 'form-label'
                 ],
                 'constraints' => [ 
                     new Assert\NotNull()
@@ -149,7 +149,7 @@ class RecipeType extends AbstractType
            ->add('imageFile', VichImageType::class, [ 
                'label' => 'Image de la recette',
                'label_attr' => [
-                   'class' => 'form-label mt-4'
+                   'class' => 'form-label '
                ]
             ])
             ->add('ingredients', EntityType::class, [
@@ -160,9 +160,9 @@ class RecipeType extends AbstractType
                     ->orderBy('i.name','ASC')
                     ->setParameter('user', $this->token->getToken()->getUser());
                 },
-                'label' => 'les ingrédients',
+                'label' => 'Les ingrédients',
                 'label_attr' => [ 
-                    'class' => 'form-control mt-4'
+                    'class' => 'ingredientBox '
                 ],
                 'choice_label' => 'name',
                 'multiple' => true,
@@ -170,7 +170,7 @@ class RecipeType extends AbstractType
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-primary mt-4'
+                    'class' => 'btn-NewRecipeForm'
             ],
                 'label' => 'Créer ma recette'
             ])

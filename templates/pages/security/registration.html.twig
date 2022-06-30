@@ -3,11 +3,14 @@
 {% block title %}LA Toque - Inscription{% endblock %}
 
 {% block body %}
-  <div class='container'>
-    <h1 class='mt-4'>Formulaire d'inscription</h1>
 
-    {{ form(form) }}
+  <section class='registration-container'>
+  <div class="registration-grid">
+    <h1 class='registration-h1'>Formulaire d'inscription</h1>
 
-  </div>
+ <div class="registration-form"> {{ form(form) }}</div>
+</div>
+<div class="right-registration-img"></div>
+  </section>
   {% endblock %}
 

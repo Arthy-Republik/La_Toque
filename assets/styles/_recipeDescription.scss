@@ -1,0 +1,143 @@
+main {
+    height: 93vh;
+
+  .recipeDetails-container {
+    height: inherit;
+    background-color: white;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .recipeDetails-Leftontainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin: 50px;
+
+      .recipeDetailsTitle {
+        font-size: 3rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      figure img {
+        border-radius: 20px;
+       
+      }
+
+      .recipeCreationDate {
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+    }
+
+    .recipeDetails-rightContainer {
+      background-color:#ecf5f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 50px 0;
+    
+      
+
+      .recipeTime {
+        display: flex;
+        flex-direction: column;
+        p {
+          padding: 10px;
+          font-weight: 600;
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+        }
+        span {
+          font-weight: 300;
+          font-size: 1.1rem;
+          letter-spacing: 1px;
+        }
+      }
+
+      .recipeNbPeople {
+        display: flex;
+        flex-direction: column;
+        p {
+          padding: 10px;
+          font-weight: 600;
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+        }
+        span {
+          font-weight: 300;
+          font-size: 1.1rem;
+          letter-spacing: 1px;
+        }
+      }
+      .recipeDifficulty {
+        display: flex;
+        flex-direction: column;
+        p {
+          padding: 10px;
+          font-weight: 600;
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+        }
+        span {
+          font-weight: 300;
+          font-size: 1.1rem;
+          letter-spacing: 1px;
+        }
+      }
+      .recipePrice {
+        display: flex;
+        flex-direction: column;
+        p {
+          padding: 10px;
+          font-weight: 600;
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+        }
+        span {
+          font-weight: 300;
+          font-size: 1.1rem;
+          letter-spacing: 1px;
+        }
+      }
+      .recipeDescription {
+        display: flex;
+        flex-direction: column;
+        p {
+          padding: 10px;
+          font-weight: 600;
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+        }
+        span {
+          font-size: 1.1rem;
+          padding: 0 50px;
+          text-align: justify;
+          line-height: 25px;
+          letter-spacing: 1px;
+        }
+      }
+      .recipeIngredientContainer {
+        display: flex;
+        flex-direction: column;
+        p {
+          padding: 10px;
+          font-weight: 600;
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+        }
+        .boxbox {
+          display: flex;
+          justify-content: space-evenly;
+          span {
+            font-weight: 300;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}

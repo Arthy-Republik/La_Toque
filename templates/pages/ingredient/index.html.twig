@@ -3,59 +3,77 @@
 {% block title %}La Toque - Mes ingrédients{% endblock %}
 
 {% block body %}
-     <div class="container mt-4" >
+<header>   
+ {% block header %}
+      {% include 'commons/_header.html.twig' %}
+    {% endblock %}
+ </header>
+     <div class="container-ingredient" >
         {% if not ingredients.items is same as ([]) %}
-           <h1> Mes ingrédients</h1>
+           <h1 class="ingredientIndex-title"> Mes ingrédients</h1>
 
-           <a href ="{{ path('ingredient.new') }}" class="btn btn-primary">
+           {# <a href ="{{ path('ingredient.new') }}" class="btn btn-primary">
            créer un ingredient
-           </a>
+           </a> #}
 
              {# display of the flash message #}
             {% for message in app.flashes('success') %}
-                <div class="alert alert-success mt-4">
+                <div class="alert alert-success">
                  {{ message }}
                 </div>
             {% endfor %}
 
-             <div class="count mt-4" >
-             <h4> Il y'a {{ ingredients.getTotalItemCount  }} ingrédients au total </h4>
-            <table class="table table-hover mt-4">
+            
+             <h2 class="countIngredientIndex-title"> Vous avez {{ ingredients.getTotalItemCount  }} ingrédient(s) cliquez <span> <a href="{{ path('ingredient.new') }}" class="ingredientIndexTitle">ICI </a></span> pour ajouter des ingrédients </h2>
+                <div class="ingredientIndexTable ">
+            <table>
                 <thead>
                     <tr>
-                        <th scope="col">Numéro</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Prix</th>
-                        <th scope="col">Date de création</th>
-                        <th scope="col">Edition</th>
-                        <th scope="col">Suppression</th>
+                        <th class="col ingredientId">Numéro</th>
+                        <th class="col ingredientName">Nom</th>
+                        <th class="col ingredientPrice">Prix €</th>
+                        <th class="col ingredientCreatedAt">Date de création</th>
+                        <th class="col ingredientEdit">Edition</th>
+                        <th class="col ingredientDelete">Suppression</th>
                     </tr>
                 </thead>
                  <tbody>
                     {% for ingredient in ingredients %}
-                        <tr class="table-primary">
+                        <tr class="ingredientIndex-tr">
                            <th>{{ ingredient.id }}</th>
                             <td>{{ ingredient.name }}</td>
                             <td>{{ ingredient.price }}</td>
                             <td>{{ ingredient.createdAt|date('d/m/y') }}</td>
-                            <td>
-                              <a href="{{ path('ingredient.edit', { id: ingredient.id }) }}" class="btn btn-info">Mofifier</a>
+                            <td >
+                     <div class="btnUpdate-box">
+                              <a href="{{ path('ingredient.edit', { id: ingredient.id }) }}" class="ingredientBtnIndex-update">Modifier</a></div>
                             </td>
+
                             <td>
-                             <a href="{{ path('ingredient.delete', { id: ingredient.id }) }}" class="btn btn-warning">Supprimer</a>
+                                <div class="btnDelete-box">
+                             <a href="{{ path('ingredient.delete', { id: ingredient.id }) }}" class="ingredientBtnIndex-delete">Supprimer</a></div>
                             </td>
                          </tr>
                     {% endfor %}
                 </tbody>
              </table>
-             <div class="navigation d-flex justify-content-center mt-4">
+             </div>
+             <div class="paginationRender">
                 {{ knp_pagination_render(ingredients) }}
             </div>
         {% else %}
-        <h4>Il n'y a pas d'ingrédient</h4>
-           <a href ="{{ path('ingredient.new') }}" class="btn btn-primary">
-           créer un ingredient
-           </a>
+        .
+         <h1 class="ingredientIndex-title"> Mes ingrédients</h1>
+         
+        <h2 class="noIngredient-title">Aie, Il n'y a pas d'ingrédient</h2>
+        <div class="btnBox-noIngredient">
+         <btutton class="btnNewIngredient">  <a href ="{{ path('ingredient.new') }}">  
+           Ajouter son premier ingredient
+           </a></btutton> 
+           </div>
         {% endif %}
      </div>
+       {% block footer %}
+      {% include 'commons/_footer.html.twig' %}
+    {% endblock %}
 {% endblock %}

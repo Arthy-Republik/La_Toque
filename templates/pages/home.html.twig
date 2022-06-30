@@ -3,41 +3,79 @@
 {% block title %}La Toque - Accueil {% endblock %}
 
 {% block body %}
- {% if app.user %}
-<div class="container mt-4 " >
-    <div class="jumbotron">
-      <h1 class="display-4">La Toque te souhaite la Bienvenue</h1>
-      <p class="lead">La Toque est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi meme créer. <br> Tu pourras si tu le souhaites ajouter, modifier et supprimer tes ingrédients puis composer tes recettes au choix en fonction de tes ingrédients</p>
-      <hr class="my-4">
-  </div>
-    <div class="recipes" >
-      <h2 class="mt-4"> En manque d'inspiration ? Voici quelques exemples des recettes de la communauté</h2>
-     <div class="d-flex justify-content-between">
-        {% for recipe in recipes %}
-          <div class="card bg-light mt-4" style="max-width: 20rem;">
-            <div class="card-header"> Recette n° {{ recipe.id }} </div>
-            <div class="card-body">
-              <h4 class="card-title">{{ recipe.name }}</h4>
-              <p class="card-text">{{ recipe.description|slice(0, 100 ) ~ '...' }}</p>
-            </div>
-          </div>
-        {% endfor %}
-  </div>
-   {% else %}
-  <div class="container mt-4 " >
-    <div class="jumbotron">
-      <h1 class="display-4">Bienvenue sur La Toque</h1>
-      <p class="lead">La Toque est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi meme créer. <br> Tu pourras partager tes recettes à la communauté La Toque , ou bien les garder pour toi, en privées.</p>
-      <hr class="my-4">
-      <p class="lead">Pour commencer, rendez vous sur la page d'inscription pour utiliser l'application.</p>
-      <a class="btn btn-primary btn-lg" href="{{ path('security.registration') }}" role="button">Inscription</a>
-  </div>
 
-    <div class="recipes" >
-      <h2 class="mt-4"> Les recettes de la communauté</h2>
-     <div class="d-flex justify-content-between">
+ {% if app.user %}
+ 
+    {# {% block header %}
+      {% include 'commons/_header.html.twig' %}
+    {% endblock %} #}
+
+<section class="landingUserPage-container">
+  <div class="gridLandingUser">
+     <div class="containerHeroUser">
+      <div class="titles">
+        <h1 class="landingPageUserH1" >Aloha <span class="userName">{{ app.user.fullName }} </span>! </h1>
+        <h2 class="landingPageUserH2"> Bienvenue sur ton compte La Toque </h2>
+      </div>
+        <div class="landingPageUserparagraph">
+          <p class="landingPageP1"> Tu pourras si tu le souhaites ajouter, modifier et supprimer tes ingrédients puis composer tes recettes au choix en fonction de tes ingrédients.<br>
+          Alors n'attend plus et commence maintenant à ajouter tes ingrédients et à faire tes recettes. </p>
+    
+        </div>
+              <div class="btn-user">
+          <ul class="btn-user-ul">
+             <li class="btn-logout">
+            <a class="leftSide-menu-deco" href=" {{ path('security.logout') }}">Se déconnecter</a> </li>
+            <li class="btn-update"> 
+             <a class="rightSide-menu-update" href="{{ path('user.edit' , {id : app.user.id}) }}" >Modifier son compte</a></li>
+         
+          </ul> 
+        </div>
+      </div>
+    
+     <div class="grid-gallerie-container"> 
+        <div class="gallerie-container w-1"> 
+           <div class="gallerie-item h-1"> 
+            <a class="ingredientPath" href="{{ path('ingredient.index') }}" role="button">
+            <div class="img-grid-user"> 
+              <img src="../assets/images/nordwood-themes-wtevVfGYwnM-unsplash.jpg" alt="ingrédients"></div></a>
+            <div class="text">Mes Ingrédients</div>
+        </div>
+           </div>
+        <div class="gallerie-container w-2"> 
+             <div class="gallerie-item h-2"> 
+              <a class="recipesPath" href="{{ path('recipe.index') }}" role="button"> 
+              <div class="img-grid-user"> 
+                <img src="../assets/images/edward-howell-yArvCsvY_kM-unsplash.jpg" alt="recettes"></div></a>
+              <div class="text">Mes Recettes</div>
+        </div>
+           </div>
+        <div class="gallerie-container w-4"> 
+            <div class="gallerie-item h-3"> 
+               <a class="publicPath" href="{{ path('recipe.public') }}" role="button"> 
+               <div class="img-grid-user"> 
+            <img src="../assets/images/noah-buscher-8A7fD6Y5VF8-unsplash.jpg" alt="les Toqués"></div></a>
+          <div class="text">La Communauté</div>
+        </div>
+               </div>
+                  <div class="gallerie-container w-3"> 
+            <div class="gallerie-item h-4"> 
+              <div class="img-grid-user"> 
+             <a class="instaPath" href="https://www.instagram.com/arthy_republik/" role="button"  target="_blank"> <img src="../assets/images/pexels-victor-freitas-744780" alt="les Toqués"></div></a>
+          <div class="text">Follow US</div>
+        </div>
+               </div>
+     </div>
+  </div>
+</section>
+
+ 
+    {# <div class="recipes" >
+      <h2 class="mt-4"> En manque d'inspiration ? Voici quelques exemples des recettes de la communauté</h2>
+     <div class="recipesFlex">
+     
         {% for recipe in recipes %}
-          <div class="card bg-light mt-4" style="max-width: 15rem;">
+          <div class="recipesCard">
             <div class="card-header"> Recette n° {{ recipe.id }} </div>
             <div class="card-body">
               <h4 class="card-title">{{ recipe.name }}</h4>
@@ -45,11 +83,138 @@
             </div>
           </div>
         {% endfor %}
-   {% endif %}
-      </div>
-      <p class="mt-4"><a class="btn btn-primary btn-lg" href="{{ path('recipe.public') }}" role="button">Plus de recettes ici</a></p>
+  </div> #}
+   {% else %}
+  
+  <div class="container landingPage" >
+    
+        <section class="containerHero">
+         <div class="backgroundImage">
+            <div class="container">
+          <h1 class="landingPageTitle">Bienvenue sur <span> La Toque !</span></h1>
+          <p class="paragraph">Pour commencer à découvrir l'application, rendez vous sur la page d'inscription ou bien connectez vous sur votre compte.</p>
+          <div class="btnBox">
+        <button class="btn-registration">  <a  href="{{ path('security.registration') }}" role="button">Je m'inscris</a> </button>
+          <button class="btn-login"> <a  href="{{ path('security.login') }}">Je me connecte
+          </a></button>
+          </div> 
+          </div>
+        </div>
+           <svg class="arrows">
+      <path class="a1" d="M0 0 L30 32 L60 0"></path>
+      <path class="a2" d="M0 20 L30 52 L60 20"></path>
+      <path class="a3" d="M0 40 L30 72 L60 40"></path>
+    </svg>
+    </section>   
+   
+     
+    {# <div class="imgTest">
+    <img src="{{ asset('build/images/a.jpg') }}" alt="ACME logo">
+    </div> #}
+ 
+    <section class="description">
+    <div class="descriptionContainer">
+   <p class="descriptionParagraph"> La Toque est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi meme créer.  Tu pourras si tu le souhaites ajouter, modifier et supprimer tes ingrédients puis composer tes recettes au choix en fonction de tes ingrédients.</p>
+    
     </div>
+
+    </section>
+    <section class="pictures">
+    <div class="img-grid">
+    <div class="img-1 picture"><span class="span-text">Taste</span></div>
+     <div class="img-2 picture"><span class="span-text">Discover</span></div>
+      <div class="img-3 picture"><span class="span-text">Share </span></div>
+    </div>
+    
+    </section>
+    <section class="recipes">
+  <div class="container-recipe" >
+          <h1 class="publicTitle"> Les recettes de la communauté</h1>
+        
+  <div class="recipe-container">
+        {% for recipe in recipes %}
+        <div class="recipe-card">
+	<figure>
+	 	   <img  src="{{ vich_uploader_asset(recipe,'imageFile') }}" alt="ACME logo">
+	</figure>
+	
+	<div class="card-meta">
+  <div class="recipe-number"> Recette n° {{ recipe.id }} </div>
+		
+		<ul class="dish-stats">
+    <li>
+   
+    </li>
+			<li>
+				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8 2C4.6875 2 2 4.6875 2 8C2 11.3125 4.6875 14 8 14C11.3125 14 14 11.3125 14 8C14 4.6875 11.3125 2 8 2Z" stroke-miterlimit="10"/>
+					<path d="M8 4V8.5H11" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				{{ recipe.time }} min
+			</li>
+			<li>
+				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M4.9713 2.5C7.00005 2.5 8.00005 4.5 8.00005 4.5C8.00005 4.5 9.00005 2.5 11.0288 2.5C12.6775 2.5 13.9832 3.87937 14 5.52531C14.0344 8.94187 11.2897 11.3716 8.2813 13.4134C8.19836 13.4699 8.10036 13.5 8.00005 13.5C7.89973 13.5 7.80174 13.4699 7.7188 13.4134C4.71067 11.3716 1.96598 8.94187 2.00005 5.52531C2.01692 3.87937 3.32255 2.5 4.9713 2.5Z" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			{{ recipe.difficulty }}/5
+			</li>
+		</ul>
+	</div> <!-- end card-meta -->
+	
+	<h4 class="card-title">{{ recipe.name }}</h4>
+     <p class="card-text">{{ recipe.description|slice(0, 100 ) ~ '...' }}</p>
+</div>  <!-- end recipe-card -->
+         
+        {% endfor %}
+ 
+ </div>
+ 
+      <div class="container-btn">
+      <p class="inspirationP"> En manque d'inspiration ? vous pouvez découvrir plus de recettes des utilisateurs de la Toque.</p>
+      <a class="btn-moreRecipe" href="{{ path('recipe.public') }}" role="button">Plus de recettes ici</a>
+   </div>
      
   </div>
- 
+   </section>
+           <section class="repeatConnexion"> 
+    <div class="grid-container-connexion">
+  <div class="left-img-container">
+  
+     </div>
+      <div class="right-btn-container">
+    <div class="right-btn-container">
+    <h3 class="joinLaToque"> Rejoignez la communauté des Toqués
+    </h3>
+    </div>
+       <div class="btnBox">
+          <a class="btn-registration" href="{{ path('security.registration') }}" role="button">Inscription</a>
+           <a class="btn-login" href="{{ path('security.login') }}">Se connecter
+          </a>
+     </div>
+     </div>
+         </div>
+        </section>
+    
+    <section class="social">
+      <div class="socialNetwork">
+        <h4 class="socialTitle"><span class="likeUs"> Vous nous aimez ? <br></span><span class="followUs">Dite le nous sur Instagram</span></h4>
+        <div class="social-icons">
+        <ul class="socialList">
+            <a href="https://www.instagram.com/arthy_republik/" target="_blank" class ="logo-insta" <li><img src="../assets/black-icons/insta.svg" alt="Logo instagram"></li> </a>
+                 
+        </div>
+      <p class="slogan "> <span> SPREAD</span><span> THE</span><span> WORD </span> <span> |</span> <span class="jpn">広がる</span></p>
+    </div>
+    <div class="socialPictures">
+
+    </div>
+    </section>
+    
+  {% block footer %}
+      {% include 'commons/_footer.html.twig' %}
+    {% endblock %}
+   {% endif %}
+     
+   
+
 {% endblock %}

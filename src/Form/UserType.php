@@ -22,7 +22,7 @@ class UserType extends AbstractType
             ],
                 'label' => 'Nom / Prénom',
                 'label_attr' => [ 
-                'class' => 'form_label mt-4' 
+                'class' => 'form_label' 
             ],
                 'constraints' => [ 
                 new Assert\NotBlank(),
@@ -38,15 +38,15 @@ class UserType extends AbstractType
                 'required' => false,
                 'label' => 'Pseudo (Facultatif)',
                 'label_attr' => [ 
-                'class' => 'form_label mt-4' 
+                'class' => 'form_label' 
             ],
                 'constraints' => [ 
                 new Assert\Length(['min' => 2, 'max' => 50]),
             ]
         ])
-        ->add('submit', SubmitType::class, [ 
+        ->add('Modifier', SubmitType::class, [ 
             'attr' => [ 
-                'class' => 'btn btn-primary mt-4'
+                'class' => 'form-btn-edit'
             ]
         ]);
         

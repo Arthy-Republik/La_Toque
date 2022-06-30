@@ -1,0 +1,151 @@
+.container-ingredient {
+  background: #f9e8e7;
+  height: 93vh;
+
+  .noIngredient-title {
+    font-size: 2rem;
+    font-weight: 300;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+  }
+  .btnBox-noIngredient { 
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+
+  .btnNewIngredient { 
+      font-family: "Poppins", sans-serif;
+      background-color: #07393e;
+      height: 65px;
+      border-radius: 25px;
+      font-size: 22px;
+      padding: 15px 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 30px;
+      border: none;
+      cursor: pointer;
+      transition: 300ms ease-in-out;
+
+      a {
+        color: white;
+      }
+    }
+    .btnNewIngredient:hover {
+      transform: scale(1.1);
+      transition: 300ms ease-in-out;
+    }} 
+  .ingredientIndex-title {
+    font-size: 3rem;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  .countIngredientIndex-title {
+    font-size: 1.2rem;
+    font-weight: 300;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 1px;
+    padding-bottom: 50px;
+    span a {
+      color: #07393E;
+      font-weight: bold;
+    }
+  }
+  .alert-success {
+    padding-top: 20px;
+    font-size: 1rem;
+    color: #f1746d;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+  }
+  .ingredientIndexTable {
+    padding: 50px;
+    border-radius: 20px;
+    margin: 0 auto;
+max-width: 1200px;
+background-color: #ecf5f5;
+   
+    table {
+      width: 100%;
+      font-size: 1.2rem;
+      color: #444;
+      white-space: nowrap;
+      border-collapse: collapse;
+      text-align: center;
+      align-items: center;
+    
+
+      thead {
+        background-color: #07393E;
+        color: #ecf5f5;
+        font-weight: 400;
+        letter-spacing: 1px;
+      
+        .col { 
+          padding: 15px 30px;
+        }
+      }
+      tbody {
+        th {
+          padding: 30px;
+        
+        }
+        th,
+        td {
+          border: 1px solid #0f0f0f17;
+        }
+
+        .btnUpdate-box {
+          display: flex;
+          justify-content: center;
+
+          .ingredientBtnIndex-update {
+            display: inline-block;
+            color:  #07393E;
+            font-weight: 600;
+            border: 1px solid #07393E;
+            border-radius: 5px;
+            padding: 5px 10px;
+            transition: 300ms ease-in-out;
+          }
+
+          a:hover { 
+            transform: scale(1.1);
+            transition: 300ms ease-in-out;
+          }
+        }
+
+        .btnDelete-box {
+          display: flex;
+          justify-content: center;
+          .ingredientBtnIndex-delete {
+            display: inline-block;
+            color: #f1746d;
+            font-weight: 600;
+            border: 1px solid #f1746d;
+            border-radius: 5px;
+            padding: 5px 10px;
+            transition: 300ms ease-in-out;
+           
+           
+          }
+          a:hover { 
+            transform: scale(1.1);
+            transition: 300ms ease-in-out;
+          }
+        }
+        tr:nth-child(even) { 
+          background-color: #bbd3d6;
+        }
+      }
+    }
+  }
+}

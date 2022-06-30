@@ -23,9 +23,9 @@ class IngredientType extends AbstractType
                     'minlength' => '2',
                     'maxlength' => '50'
                 ], 
-                'label' => 'Nom',
+                'label' => "Nom de l'ingrédient ",
                 'label_attr' => [
-                    'class' => 'form-label mt-4'
+                    'class' => 'form-label'
                 ],
                 'constraints' => [ 
                     new Assert\Length(['min' => 2, 'max' => 50]),
@@ -38,9 +38,9 @@ class IngredientType extends AbstractType
                     'class' => 'form-control',
         
                 ],
-                'label' => 'Prix ',
+                'label' => "Prix de l'ingrédient ",
                 'label_attr' => [
-                    'class' => 'form-label mt-4'
+                    'class' => 'form-label'
                 ],
                 'constraints' => [ 
                     new Assert\Positive(),
@@ -50,7 +50,7 @@ class IngredientType extends AbstractType
           ])
                 ->add('submit', SubmitType::class, [ 
                     'attr' => [
-                        'class' => 'btn btn-primary mt-4'
+                        'class' => 'btn btn-primary'
                 ],
                     'label' => 'Créer mon ingrédient'
            ]);

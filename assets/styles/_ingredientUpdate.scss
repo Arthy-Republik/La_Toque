@@ -1,0 +1,78 @@
+main {
+  height: 97vh;
+  background-color: #f9e8e7;
+  position: relative;
+
+  .containerUpdate-ingredient {
+    align-items: center;
+    text-align: center;
+
+    .ingredientUpdate-title {
+      font-size: 3rem;
+      font-weight: 500;
+      align-items: center;
+      text-align: center;
+      padding: 50px;
+      letter-spacing: 1px;
+      color: #07393E;
+    }
+
+    .ingredientUpdate-form {
+     border-radius: 20px;
+      background-color: white;
+      max-width: 400px;
+      position: absolute;
+      left: +50%;
+      top: +50%;
+      transform: translate(-50%, -50%);
+      padding: 50px 80px;
+     
+      width: 100%;
+    }
+    .form-group {
+      display: flex;
+      flex-direction:column ;
+      font-size:1.2rem ;
+      padding-bottom: 20px;
+      align-items: center;
+   label { 
+    padding: 10px;
+    font-weight: 600;
+   }
+   input {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    border: none;
+border-radius: 8px;
+text-transform: capitalize;
+background-color: #f9e8e7;
+  
+   }
+    }
+
+  #ingredient_submit { 
+    font-family: "Poppins", sans-serif;
+    background-color: #07393E;
+    color: antiquewhite;;
+
+    border-radius: 25px;
+    font-size: 18px;
+ 
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 30px;
+       border: none;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+   
+   
+  }
+  #ingredient_submit:hover { 
+    transform: scale(1.1);
+    transition: 300ms ease-in-out;
+   
+  
+  }
+  }
+}

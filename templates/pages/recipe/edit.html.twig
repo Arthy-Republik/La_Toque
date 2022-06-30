@@ -1,69 +1,90 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}La Toque - Modifier une recette{% endblock %}
+{% block title %}
+  La Toque - Modifier une recette
+{% endblock %}
 
 {% block body %}
 
-  <div class="container"> 
+<header>
+  {% block header %}
+    {% include 'commons/_header.html.twig' %}
+  {% endblock %}
+</header>
 
-    <h1 class="mt-4">Modification d'une recette</h1>
+  <section class="updateRecipe-container newRecipeWidth">
 
-    {{ form_start(form) }}
+   
 
-     <div class="form-group">
+    <div class="updateRecipe-box">
+      {{ form_start(form) }}
+ <h1 class="updateRecipe-title">
+      Modification d'une recette
+    </h1>
+      <div class="form-group">
         {{ form_label(form.name) }}
         {{ form_widget(form.name) }}
-          <div class="form-error">
-            {{ form_errors(form.name) }}
-         </div>
-    </div>
+        <div class="form-error">
+          {{ form_errors(form.name) }}
+        </div>
+      </div>
 
-        <div class="form-group">
+      <div class="form-group">
         {{ form_label(form.nbPeople) }}
         {{ form_widget(form.nbPeople) }}
-          <div class="form-error">
-            {{ form_errors(form.nbPeople) }}
-         </div>
-    </div>
+        <div class="form-error">
+          {{ form_errors(form.nbPeople) }}
+        </div>
+      </div>
 
-         <div class="form-group">
+      <div class="form-group">
         {{ form_label(form.time) }}
         {{ form_widget(form.time) }}
-          <div class="form-error">
-            {{ form_errors(form.time) }}
-         </div>
-    </div>
+        <div class="form-error">
+          {{ form_errors(form.time) }}
+        </div>
+      </div>
 
-         <div class="form-group">
+      <div class="form-group">
         {{ form_label(form.difficulty) }}
         {{ form_widget(form.difficulty) }}
-          <div class="form-error">
-            {{ form_errors(form.difficulty) }}
-         </div>
-    </div>
+        <div class="form-error">
+          {{ form_errors(form.difficulty) }}
+        </div>
+      </div>
+        
+      <div class="form-group">
+          {{ form_label(form.description) }}
+          {{ form_widget(form.description) }}
+        <div class="form-error">
+          {{ form_errors(form.description) }}
+        </div>
+      </div>
 
-       <div class="form-group">
-        {{ form_label(form.description) }}
-        {{ form_widget(form.description) }}
-          <div class="form-error">
-            {{ form_errors(form.description) }}
-         </div>
-    </div>
-
-         <div class="form-group">
+      <div class="form-group">
         {{ form_label(form.price) }}
         {{ form_widget(form.price) }}
-          <div class="form-error">
-            {{ form_errors(form.price) }}
-         </div>
-    </div>
-  
-         <div class="form-check mt-4">
-          {{ form_widget(form.isFavorite) }}
-           {{ form_label(form.isFavorite) }}
-         </div>
-        
-    {{ form_row(form.ingredients) }}
-     {{ form_end(form) }}
-</div>
+        <div class="form-error">
+          {{ form_errors(form.price) }}
+        </div>
+      </div>
+
+      <div class="form-groupFavorite">
+        {{ form_label(form.isFavorite) }}
+        {{ form_widget(form.isFavorite) }}
+   
+        <div class="form-error">
+          {{ form_errors(form.isFavorite) }}
+        </div>
+      </div>
+      {{ form_row(form.ingredients) }}
+ <div class="formLastPart">
+      {{ form_end(form) }}
+      </div>
+          <div class="gridImg"></div>
+       </div>
+ 
+   
+      </section>
+
 {% endblock %}

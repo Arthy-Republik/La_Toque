@@ -81,6 +81,7 @@ class RecipeController extends AbstractController
     /**
     * This controller allow us to see the description of a recipe but only for the specific user
     */
+    
     #[Security("is_granted('ROLE_USER') and (recipe.getIsPublic() === true || user === recipe.getUser())")]
     #[Route('/recette/{id}', name:'recipe.show', methods: ['GET'])]
     public function show(Recipe $recipe) : Response

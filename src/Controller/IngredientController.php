@@ -111,3 +111,4 @@ class IngredientController extends AbstractController
         return $this->redirectToRoute('ingredient.index');
     }
 }
+

@@ -1,14 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<header>
+ {% block header %}
+      {% include 'commons/_header.html.twig' %}
+    {% endblock %}
+    </header>
+      <main>
+  <div class="containerUpdate-ingredient"> 
 
-  <div class="container"> 
-
-    <h1 class="mt-4">Modification de l'ingrédient</h1>
-
+    <h1 class="ingredientUpdate-title">Modification de l'ingrédient</h1>
+  <div class="ingredientUpdate-form">
     {{ form_start(form) }}
-   
-     <div class="form-group">
+ 
+     <div class="form-group ingredientName">
         {{ form_label(form.name) }}
         {{ form_widget(form.name) }}
           <div class="form-error">
@@ -16,7 +21,7 @@
          </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group ingredientPrice">
         {{ form_label(form.price) }}
         {{ form_widget(form.price) }}
           <div class="form-error">
@@ -24,12 +29,15 @@
           </div>
     </div>
 
-    <div class="form-group">
+    <div class="btnIngredientSubmit">
        {{ form_row(form.submit) }}
        </div>
     
     </div>
+     
+
     {{ form_end(form) }}
+    </div>
   </div>
-  
+   </main>
 {% endblock %}

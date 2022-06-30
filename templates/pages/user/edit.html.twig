@@ -1,16 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}La Toque - Mofification de l'utilisateur{% endblock %}
+{% block title %}
+  La Toque - Mofification de l'utilisateur
+{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="mt-4">Formulaire de Mofification des informations de l'utilisateur</h1>
-    {% for message in app.flashes('warning') %}
-        <div class=" alert alert-warning mt-4">
+  <section class="information-edit-container">
+    <div class="grid-edit-container">
+      <h1 class="edit-h1">
+        Modifier mes informations personnelles 
+      </h1>
+      {% for message in app.flashes('warning') %}
+        <div class="alert alert-warning mt-4">
           {{ message }}
         </div>
-    {% endfor %}
+      {% endfor %}
 
+      <div class="information-edit-form">
         {{ form(form) }}
+      </div>
     </div>
+    <div class="left-edit-img"></div>
+  </section>
 {% endblock %}

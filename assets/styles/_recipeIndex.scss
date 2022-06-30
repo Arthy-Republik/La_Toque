@@ -1,0 +1,255 @@
+.container-recipe {
+ background-color: #fff5ee;
+padding-top: 50px;
+
+  .recipeIndex-title {
+    font-size: 3rem;
+    font-weight: 500;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .countIndex-title h2 {
+    padding-top: 20px;
+    font-size: 2rem;
+    font-weight: 300;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+
+    span a {
+      color: #07393e;
+      font-weight: bold;
+    }
+  }
+  .alert-success {
+    padding-top: 20px;
+    font-size: 1rem;
+    color: red;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+  }
+  .recipe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 16rem));
+    grid-column-gap: 150px;
+    grid-row-gap: 50px;
+
+    justify-content: center;
+    max-width: 1800px;
+    margin: 0 auto;
+
+    padding: 50px;
+    .h-index {
+      background-color: var(--card-bg-color);
+      box-shadow: var(--card-shadow);
+      border-radius: var(--global-radius);
+      color: var(--card-text-color);
+      font-family: "Poppins", sans-serif;
+      line-height: 1.5;
+      width: 22rem;
+
+      height: 500px;
+
+      figure {
+        width: 100%;
+        margin: 0;
+        height: 14rem;
+        overflow: hidden;
+        border-radius: var(--global-radius) var(--global-radius) 0 0;
+        margin-bottom: 2rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .btn-indexRecipe {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 20px;
+        .btnIndex {
+          border-radius: 4px;
+          padding: 5px 10px;
+          transition: 300ms ease-in;
+        }
+        .btn-info {
+          border: 1px solid blue;
+          color: blue;
+        }
+        .btn-update {
+          border: 1px solid rgb(170, 52, 52);
+          color: rgb(170, 52, 52);
+        }
+        .btn-delete {
+          border: 1px solid rgba(50, 87, 50, 0.863);
+          color: rgba(50, 87, 50, 0.863);
+        }
+        .btnIndex:hover {
+          transform: scale(1.1);
+          transition: 300ms ease-in;
+        }
+      }
+      .card-title {
+        margin-left: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: -1px;
+      }
+      .card-text {
+        border-top: 1px solid rgba(128, 128, 128, 0.384);
+        font-size: 0.8rem;
+        margin: 0 30px 50px 20px;
+        padding-top: 10px;
+        overflow: hidden;
+      }
+      .card-meta {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 20px;
+        font-size: 0.8rem;
+      }
+      .recipe-number {
+        font-weight: 600;
+        letter-spacing: -0.25px;
+        color: #fff;
+        margin: 0;
+        background-color: var(--dish-type-color);
+        padding: 8px;
+        border-radius: 100px;
+      }
+      .dish-stats {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+
+        li {
+          opacity: 0.75;
+          display: flex;
+          align-items: center;
+          margin-left: 10px;
+
+          svg {
+            margin-right: 5px;
+            path {
+              stroke: var(--card-text-color);
+              stroke-opacity: 0.25;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.reciperGrid-container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background-color: #fff5ee;
+
+  .noReciperGrid-container {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 50px;
+
+    .noRecipeIndex-h2 {
+      padding-bottom: 40px;
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .btnNewRecipe {
+      font-family: "Poppins", sans-serif;
+      color: #f1746d;
+      border: 1px solid #f1746d;
+      height: 65px;
+      border-radius: 25px;
+      font-size: 22px;
+      padding: 15px 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 30px;
+      cursor: pointer;
+      transition: 300ms ease-in-out;
+    }
+
+    .btnNewRecipe:hover {
+      transform: scale(1.1);
+      transition: 300ms ease-in;
+    }
+  }
+
+  .noRecipeImg {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 20px;
+    gap: 10px;
+    margin-right: 20px;
+    height: 68vh;
+    overflow: hidden;
+
+    .noRecipeText {
+      font-size: 4rem;
+      width: 50%;
+      color: #fff5ee;
+      font-weight: 900;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+ 
+    }
+    .noRecipePicture {
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      opacity: 0.9;
+      overflow: hidden;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      overflow: hidden;
+      border-radius: 10px;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+    .img-1 {
+      background-image: url(../images/edgar-castrejon-1CsaVdwfIew-unsplash.jpg);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    }
+    .img-2 {
+      background-image: url(../images/pexels-tijana-drndarski.jpg);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    .img-3 {
+      background-image: url(../images/pexels-aleksandar-pasaric-2940256.jpg);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+}
