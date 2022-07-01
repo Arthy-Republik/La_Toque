@@ -44,10 +44,11 @@
         }
 
         #recipe_description {
-          height: 100px;
+          min-height: 100px;
      padding: 10px;
           border-radius: 8px;
           border: none;
+
         }
 
         .form-check-input {
@@ -87,17 +88,20 @@
       }
 
       #recipe_submit {
-        margin-top: 50px;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: antiquewhite;
-        font-weight: 700;
-        border: 2px solid salmon;
-        background-color: salmon;
-        padding: 15px;
-        border-radius: 8px;
-        transition: 300ms ease-in;
+        font-family: "Poppins", sans-serif;
+        background-color: #07393e;
+        height: 65px;
+        border-radius: 25px;
+        font-size: 22px;
+        padding: 15px 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 30px;
+        margin-top: 40px;
+        border: none;
         cursor: pointer;
+        transition: 300ms ease-in-out;
+        color: antiquewhite;
       }
       #recipe_submit:hover {
         transform: scale(1.1);

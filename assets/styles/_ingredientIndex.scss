@@ -1,7 +1,7 @@
 .container-ingredient {
   background: #f9e8e7;
-  height: 93vh;
-
+min-height: 93vh;
+padding-bottom: 50px;
   .noIngredient-title {
     font-size: 2rem;
     font-weight: 300;
@@ -45,9 +45,10 @@
     padding-top: 50px;
     padding-bottom: 20px;
     letter-spacing: 1px;
+  
   }
   .countIngredientIndex-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 300;
     align-items: center;
     text-align: center;
@@ -72,6 +73,7 @@
     margin: 0 auto;
 max-width: 1200px;
 background-color: #ecf5f5;
+
    
     table {
       width: 100%;
@@ -96,11 +98,13 @@ background-color: #ecf5f5;
       tbody {
         th {
           padding: 30px;
+         
         
         }
         th,
         td {
           border: 1px solid #0f0f0f17;
+          font-weight: 600;
         }
 
         .btnUpdate-box {

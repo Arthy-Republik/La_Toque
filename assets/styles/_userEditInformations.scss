@@ -1,78 +1,97 @@
-.information-edit-container { 
+.information-edit-container {
   background-repeat: repeat;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   display: grid;
-  grid-template-columns:40% 60% ;
+  grid-template-columns: 40% 60%;
 
-  .grid-edit-container { 
-  
-    background-color: #07393E;
-display: flex;
-flex-direction: column;
-justify-content: center;
-// text-align: center;
-align-items: center;
+  .grid-edit-container {
+    background-color: #07393e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // text-align: center;
+    align-items: center;
 
-.edit-h1{ 
-  font-size: 3rem; 
-  width: 80%;
-font-weight: 400;
-text-align: center;
-padding-bottom: 80px;
-color: antiquewhite;
-}
-#user {
-  border: 2px solid  antiquewhite;
-  border-radius: 5px;
-  padding: 50px;
-gap: 20px;
-line-height: 40px;
+    .edit-h1 {
+      font-size: 3rem;
+      width: 80%;
+      font-weight: 400;
+      text-align: center;
+      padding-bottom: 80px;
+      color: #f1746d;
+    }
+    #user {
+      border: 1px solid antiquewhite;
+      border-radius: 20px;
+      padding: 60px 50px;
+      gap: 20px;
+      line-height: 50px;
+      position: relative;
 
- .form_label { 
-  font-size: 1.2rem;
-  color:  antiquewhite;
- 
-text-align: left;
-text-align: left;
-padding-bottom: 20px;
+      .form_label {
+        font-size: 1.2rem;
+        color: antiquewhite;
+        font-weight: 600;
+        text-align: left;
+        text-align: left;
+        padding-bottom: 20px;
+      }
+      .form-control {
+        padding-left: 5px;
+        background-color: transparent;
+        color: antiquewhite;
+        border: none;
+        margin-left: 20px;
+        border-bottom: 1px dashed gray;
 
- }
- .form-control {
-  padding: 5px;
-  background-color: transparent;
-  color:  antiquewhite;
-  border: none;
-  margin-left: 20px;
-  // border-bottom: 1px solid black;
- .input{
- background-color: transparent;
+        .input {
+          background-color: transparent;
+        }
+      }
+      .form-btn-edit {
+       margin-top: 30px;
+        font-family: "Poppins", sans-serif;
+        background-color: #f1746d;
+        height: 65px;
+        color: antiquewhite;
+        border-radius: 25px;
+        font-size: 22px;
+        padding: 15px 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 30px;
+        border: none;
+        cursor: pointer;
+        transition: 300ms ease-in-out;
+      }
+      .form-btn-edit:hover {
+        transform: scale(1.1);
+        transition: 300ms ease-in-out;
+      }
+    }
   }
- }
- .form-btn-edit{ 
-  font-size: 1rem;
-      border: 1px solid salmon;
-      border-radius: 5px;
-      padding: 12px;
-      text-decoration: none;
-      text-transform: uppercase;
-      margin-top: 20px;
-     position: relative;
-     left: 0;
-     background: antiquewhite;
-     cursor: pointer ;
- }
-}
+.backToLandingPageBox { 
+  position: absolute;
+    bottom: 10%;
+    p {
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1rem;
+      color: antiquewhite;
+      a {
+        color:#f1746d;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
   }
-
-  .left-edit-img{
-
-background-image: url(../images/pexels-maria-orlova-4940719.jpg);
-background-size:cover;
-background-repeat:no-repeat ;
-background-position: center ;
-position: relative;
-
+  .left-edit-img {
+    background-image: url(../images/pexels-maria-orlova-4940719.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
   }
 }

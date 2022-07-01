@@ -54,9 +54,9 @@ nav .navbar-container .navbar-ul li {
 }
 nav .navbar-container .navbar-ul li a {
   padding: 10px;
-  font-weight: 600;
+  color: #FFF5EE;
   font-size: 1.2rem;
-  color: #ecf5f5;
+  font-weight: 500;
   letter-spacing: 1px;
 }
 nav .navbar-container .rightSide-menu {
@@ -73,11 +73,10 @@ nav .navbar-container .rightSide-menu .rightNav-ul li {
   padding-left: 50px;
 }
 nav .navbar-container .rightSide-menu .rightNav-ul li a {
-  color: #ecf5f5;
   padding: 10px;
-  font-weight: 600;
+  color: #FFF5EE;
   font-size: 1.2rem;
-  color: #ecf5f5;
+  font-weight: 500;
   letter-spacing: 1px;
 }
 
@@ -103,7 +102,7 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 20%;
+  top: 15%;
   margin: 0 auto;
   text-align: center;
   align-items: center;
@@ -179,8 +178,7 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
   width: 100px;
   height: 72px;
   position: absolute;
-  left: 50%;
-  margin-left: -30px;
+  left: 47%;
   bottom: 30px;
 }
 .landingPage .arrows path {
@@ -453,6 +451,8 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
 
 .landingUserPage-container {
   background-color: #07393e;
+  height: 100vh;
+  overflow: hidden;
 }
 .landingUserPage-container .gridLandingUser {
   display: grid;
@@ -462,7 +462,6 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
   padding-top: 100px;
   position: relative;
   justify-content: center;
-  height: 100vh;
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .titles {
   display: flex;
@@ -471,7 +470,7 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
   align-items: center;
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .titles .landingPageUserH1 {
-  font-size: 5rem;
+  font-size: 4rem;
   color: antiquewhite;
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .titles .landingPageUserH2 {
@@ -504,21 +503,30 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul {
   display: flex;
-  gap: 20px;
+  gap: 40px;
   align-items: center;
   text-align: center;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 50%);
-  bottom: 10%;
+  bottom: 15%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-logout {
-  font-size: 1rem;
-  color: #f1746d;
-  border: 1px solid #f1746d;
-  background-color: #9bcadc;
-  padding: 10px 15px;
-  border-radius: 8px;
+  margin-top: 30px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9e8e7;
+  height: 65px;
+  border-radius: 25px;
+  font-size: 22px;
+  padding: 15px 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 30px;
+  border: none;
+  cursor: pointer;
   transition: 300ms ease-in-out;
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-logout:hover {
@@ -526,11 +534,18 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
   transition: 300ms ease-in-out;
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-update {
-  font-size: 1rem;
-  border: 1px solid #ffc3c3;
-  background-color: #ffc3c3;
-  padding: 10px 15px;
-  border-radius: 8px;
+  margin-top: 30px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f1746d;
+  height: 65px;
+  border-radius: 25px;
+  font-size: 22px;
+  padding: 15px 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 30px;
+  border: none;
+  cursor: pointer;
   transition: 300ms ease-in-out;
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-update:hover {
@@ -592,7 +607,7 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
 
 .registration-container {
   background-repeat: repeat;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   display: grid;
@@ -608,44 +623,67 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
 .registration-container .registration-grid .registration-h1 {
   font-size: 3rem;
   font-weight: 400;
-  padding: 30px;
   padding-bottom: 80px;
 }
 .registration-container .registration-grid #registration {
   gap: 20px;
-  line-height: 40px;
-  border: 2px solid #9bcadc;
-  border-radius: 5px;
-  padding: 50px;
+  line-height: 50px;
+  border: 1px solid #07393e;
+  border-radius: 20px;
+  padding: 60px 50px;
+  position: relative;
 }
 .registration-container .registration-grid #registration .form_label {
   font-size: 1.2rem;
   text-align: left;
   text-align: left;
   padding-bottom: 20px;
+  font-weight: 600;
 }
 .registration-container .registration-grid #registration .form-control {
-  padding: 5px;
+  padding-left: 5px;
   background-color: transparent;
   border: none;
   margin-left: 20px;
-  border-bottom: 1px solid rgb(27, 26, 26);
+  border-bottom: 1px dashed gray;
+  font-size: 1.2rem;
 }
-.registration-container .registration-grid #registration .form-control .input {
+.registration-container .registration-grid #registration .form-control input {
   background-color: transparent;
 }
 .registration-container .registration-grid #registration .form-btn-registration {
-  font-size: 1rem;
-  border: 1px solid salmon;
-  border-radius: 8px;
-  padding: 10px;
-  text-decoration: none;
-  text-transform: uppercase;
-  margin-top: 20px;
-  position: relative;
-  left: 0;
-  background: #9bcadc;
+  margin-top: 30px;
+  font-family: "Poppins", sans-serif;
+  background-color: #07393e;
+  height: 65px;
+  color: antiquewhite;
+  border-radius: 25px;
+  font-size: 22px;
+  padding: 15px 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 30px;
+  border: none;
   cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+.registration-container .registration-grid #registration .form-btn-registration:hover {
+  transform: scale(1.1);
+  transition: 300ms ease-in-out;
+}
+.registration-container .alreadyAccountBox {
+  position: absolute;
+  bottom: 10%;
+}
+.registration-container .alreadyAccountBox p {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.registration-container .alreadyAccountBox p a {
+  color: #07393e;
+  font-size: 1rem;
+  font-weight: bold;
 }
 .registration-container .right-registration-img {
   background-image: url(../images/brooke-lark-pinapple.jpg);
@@ -656,9 +694,7 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
 }
 
 .login-container {
-  background-repeat: repeat;
-  min-height: 100vh;
-  overflow: hidden;
+  height: 100vh;
   position: relative;
   display: grid;
   grid-template-columns: 60% 40%;
@@ -671,12 +707,13 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
   position: relative;
 }
 .login-container form {
-  border: 2px solid #9bcadc;
-  border-radius: 5px;
-  padding: 50px;
+  border: 1px solid #07393e;
+  border-radius: 20px;
+  padding: 60px 50px;
+  position: relative;
 }
 .login-container .login-grid {
-  background-color: #ffc6b9;
+  background-color: rgba(255, 198, 185, 0.8078431373);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -689,21 +726,27 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
   font-weight: 400;
   padding: 30px;
   padding-bottom: 80px;
+  line-height: 80px;
 }
 .login-container .login-grid .form-label {
-  font-size: 1.2rem;
-  text-align: left;
+  font-size: 1.3rem;
   text-align: left;
   padding-bottom: 20px;
+  font-weight: 600;
+}
+.login-container .login-grid .form-text {
+  font-size: 1rem;
+  font-weight: 400;
 }
 .login-container .login-grid .form-control {
-  padding: 5px;
+  padding-left: 5px;
   background-color: transparent;
   border: none;
   margin-left: 20px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px dashed #07393e;
+  font-size: 1.2rem;
 }
-.login-container .login-grid .input {
+.login-container .login-grid input {
   background-color: transparent;
 }
 .login-container .login-grid .form-group {
@@ -716,29 +759,50 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
   font-style: italic;
 }
 .login-container .login-grid .form-btn-login {
-  font-size: 1rem;
-  border: 1px solid salmon;
-  border-radius: 5px;
-  padding: 10px;
-  text-decoration: none;
-  text-transform: uppercase;
-  margin-top: 20px;
-  position: relative;
-  left: 0;
-  background: #9bcadc;
+  margin-top: 30px;
+  font-family: "Poppins", sans-serif;
+  background-color: #07393e;
+  height: 65px;
+  color: antiquewhite;
+  border-radius: 25px;
+  font-size: 22px;
+  padding: 15px 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 30px;
+  border: none;
   cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+.login-container .login-grid .form-btn-login:hover {
+  transform: scale(1.1);
+  transition: 300ms ease-in-out;
+}
+.login-container .noAccountBox {
+  position: absolute;
+  bottom: 10%;
+}
+.login-container .noAccountBox p {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.login-container .noAccountBox p a {
+  color: #07393e;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .information-edit-container {
   background-repeat: repeat;
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   display: grid;
   grid-template-columns: 40% 60%;
 }
 .information-edit-container .grid-edit-container {
-  background-color: #07393E;
+  background-color: #07393e;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -750,44 +814,69 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
   font-weight: 400;
   text-align: center;
   padding-bottom: 80px;
-  color: antiquewhite;
+  color: #f1746d;
 }
 .information-edit-container .grid-edit-container #user {
-  border: 2px solid antiquewhite;
-  border-radius: 5px;
-  padding: 50px;
+  border: 1px solid antiquewhite;
+  border-radius: 20px;
+  padding: 60px 50px;
   gap: 20px;
-  line-height: 40px;
+  line-height: 50px;
+  position: relative;
 }
 .information-edit-container .grid-edit-container #user .form_label {
   font-size: 1.2rem;
   color: antiquewhite;
+  font-weight: 600;
   text-align: left;
   text-align: left;
   padding-bottom: 20px;
 }
 .information-edit-container .grid-edit-container #user .form-control {
-  padding: 5px;
+  padding-left: 5px;
   background-color: transparent;
   color: antiquewhite;
   border: none;
   margin-left: 20px;
+  border-bottom: 1px dashed gray;
 }
 .information-edit-container .grid-edit-container #user .form-control .input {
   background-color: transparent;
 }
 .information-edit-container .grid-edit-container #user .form-btn-edit {
-  font-size: 1rem;
-  border: 1px solid salmon;
-  border-radius: 5px;
-  padding: 12px;
-  text-decoration: none;
-  text-transform: uppercase;
-  margin-top: 20px;
-  position: relative;
-  left: 0;
-  background: antiquewhite;
+  margin-top: 30px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f1746d;
+  height: 65px;
+  color: antiquewhite;
+  border-radius: 25px;
+  font-size: 22px;
+  padding: 15px 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 30px;
+  border: none;
   cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+.information-edit-container .grid-edit-container #user .form-btn-edit:hover {
+  transform: scale(1.1);
+  transition: 300ms ease-in-out;
+}
+.information-edit-container .backToLandingPageBox {
+  position: absolute;
+  bottom: 10%;
+}
+.information-edit-container .backToLandingPageBox p {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
+  color: antiquewhite;
+}
+.information-edit-container .backToLandingPageBox p a {
+  color: #f1746d;
+  font-size: 1rem;
+  font-weight: bold;
 }
 .information-edit-container .left-edit-img {
   background-image: url(../images/pexels-maria-orlova-4940719.jpg);
@@ -799,7 +888,8 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
 
 .container-ingredient {
   background: #f9e8e7;
-  height: 93vh;
+  min-height: 93vh;
+  padding-bottom: 50px;
 }
 .container-ingredient .noIngredient-title {
   font-size: 2rem;
@@ -845,7 +935,7 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
   letter-spacing: 1px;
 }
 .container-ingredient .countIngredientIndex-title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   align-items: center;
   text-align: center;
@@ -895,6 +985,7 @@ nav .navbar-container .rightSide-menu .rightNav-ul li a {
 .container-ingredient .ingredientIndexTable table tbody th,
 .container-ingredient .ingredientIndexTable table tbody td {
   border: 1px solid rgba(15, 15, 15, 0.0901960784);
+  font-weight: 600;
 }
 .container-ingredient .ingredientIndexTable table tbody .btnUpdate-box {
   display: flex;
@@ -1070,15 +1161,28 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
 .container-recipe {
   padding-bottom: 50px;
   margin: 0 auto;
-  background-color: #9EA29F;
+  background-color: #9ea29f;
 }
 .container-recipe .publicTitle {
   font-size: 3rem;
   align-items: center;
   text-align: center;
-  padding: 80px;
+  padding-top: 50px;
+  padding-bottom: 40px;
   font-weight: 500;
   letter-spacing: 1px;
+}
+.container-recipe .publicParagraph {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 1.5rem;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  line-height: 50px;
 }
 .container-recipe .recipe-container {
   display: grid;
@@ -1123,10 +1227,16 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
 }
 .container-recipe .recipe-container .recipe-card .card-text {
   border-top: 1px solid rgba(128, 128, 128, 0.384);
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin: 0 30px 50px 20px;
   padding-top: 10px;
   overflow: hidden;
+  line-height: 25px;
+  text-align: justify;
+}
+.container-recipe .recipe-container .recipe-card .card-text .btn-readMore {
+  color: #f1746d;
+  font-weight: 600;
 }
 .container-recipe .recipe-container .recipe-card .card-meta {
   display: flex;
@@ -1179,8 +1289,8 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
 .container-recipe .container-btn .btn-moreRecipe {
   font-family: "Poppins", sans-serif;
   background-color: transparent;
-  border: 1px solid #f1746d;
-  color: #f1746d;
+  border: 1px solid #07393e;
+  color: #07393e;
   height: 65px;
   border-radius: 25px;
   font-size: 22px;
@@ -1188,11 +1298,10 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
   font-weight: 600;
   letter-spacing: 1px;
   line-height: 30px;
-  border: none;
   cursor: pointer;
   transition: 300ms ease-in-out;
 }
-.container-recipe .btn-moreRecipe:hover {
+.container-recipe .container-btn .btn-moreRecipe:hover {
   transform: scale(1.1);
   transition: 300ms ease-in-out;
 }
@@ -1200,12 +1309,12 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
 .updateRecipe-container .updateRecipe-title {
   font-size: 3rem;
   font-weight: 500;
-  align-items: center;
-  text-align: center;
+  align-items: left;
+  text-align: left;
   padding-bottom: 50px;
   letter-spacing: 1px;
-  width: 80%;
-  line-height: 50px;
+  width: 70%;
+  line-height: 60px;
 }
 .updateRecipe-container .updateRecipe-box {
   position: relative;
@@ -1281,6 +1390,9 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
 .updateRecipe-container .updateRecipe-box form .formLastPart .vich-image {
   margin-top: 10px;
 }
+.updateRecipe-container .updateRecipe-box form .formLastPart .vich-image a:last-child {
+  display: none;
+}
 .updateRecipe-container .updateRecipe-box form .formLastPart .vich-image label {
   display: none;
 }
@@ -1293,17 +1405,20 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
   border-radius: 10px;
 }
 .updateRecipe-container .updateRecipe-box form .formLastPart #recipe_submit {
-  margin-top: 50px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: antiquewhite;
-  font-weight: 700;
-  border: 2px solid salmon;
-  background-color: salmon;
-  padding: 15px;
-  border-radius: 8px;
-  transition: 300ms ease-in;
+  font-family: "Poppins", sans-serif;
+  background-color: #07393e;
+  height: 65px;
+  border-radius: 25px;
+  font-size: 22px;
+  padding: 15px 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 30px;
+  margin-top: 40px;
+  border: none;
   cursor: pointer;
+  transition: 300ms ease-in-out;
+  color: antiquewhite;
 }
 .updateRecipe-container .updateRecipe-box form .formLastPart #recipe_submit:hover {
   transform: scale(1.1);
@@ -1331,12 +1446,12 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
 }
 .container-recipe .countIndex-title h2 {
   padding-top: 20px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   align-items: center;
   text-align: center;
   letter-spacing: 1px;
-  padding-bottom: 10px;
+  padding-bottom: 50px;
 }
 .container-recipe .countIndex-title h2 span a {
   color: #07393e;
@@ -1596,7 +1711,7 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
   padding-left: 5px;
 }
 .newRecipe-container .newRecipe-box form .form-group #recipe_description {
-  height: 100px;
+  min-height: 100px;
   padding: 10px;
   border-radius: 8px;
   border: none;
@@ -1633,17 +1748,20 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
   margin-right: 10px;
 }
 .newRecipe-container .newRecipe-box form #recipe_submit {
-  margin-top: 50px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: antiquewhite;
-  font-weight: 700;
-  border: 2px solid salmon;
-  background-color: salmon;
-  padding: 15px;
-  border-radius: 8px;
-  transition: 300ms ease-in;
+  font-family: "Poppins", sans-serif;
+  background-color: #07393e;
+  height: 65px;
+  border-radius: 25px;
+  font-size: 22px;
+  padding: 15px 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 30px;
+  margin-top: 40px;
+  border: none;
   cursor: pointer;
+  transition: 300ms ease-in-out;
+  color: antiquewhite;
 }
 .newRecipe-container .newRecipe-box form #recipe_submit:hover {
   transform: scale(1.1);
@@ -1651,7 +1769,7 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
 }
 
 main {
-  height: 93vh;
+  min-height: 93vh;
 }
 main .recipeDetails-container {
   height: inherit;

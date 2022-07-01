@@ -9,7 +9,12 @@
     <h1 class='registration-h1'>Formulaire d'inscription</h1>
 
  <div class="registration-form"> {{ form(form) }}</div>
+   <div class="alreadyAccountBox">
+    <p> Vous avez déja un compte ?  <span><a class="alreadyAccountLink" href="{{ path('security.login') }}">connectez-vous maintenant !
+          </a> </span> </p> </div>
+    </div>
 </div>
+
 <div class="right-registration-img"></div>
   </section>
   {% endblock %}

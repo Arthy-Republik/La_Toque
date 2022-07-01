@@ -106,12 +106,7 @@
       <path class="a3" d="M0 40 L30 72 L60 40"></path>
     </svg>
     </section>   
-   
-     
-    {# <div class="imgTest">
-    <img src="{{ asset('build/images/a.jpg') }}" alt="ACME logo">
-    </div> #}
- 
+
     <section class="description">
     <div class="descriptionContainer">
    <p class="descriptionParagraph"> La Toque est une application qui va te permettre de créer des recettes à base d'ingrédients que tu auras toi meme créer.  Tu pourras si tu le souhaites ajouter, modifier et supprimer tes ingrédients puis composer tes recettes au choix en fonction de tes ingrédients.</p>
@@ -130,6 +125,7 @@
     <section class="recipes">
   <div class="container-recipe" >
           <h1 class="publicTitle"> Les recettes de la communauté</h1>
+          <p class="publicParagraph"> La Toque est une application communautaire ou chaque membre peut chosir de partager sa recette avec les autres Toqués, tu trouveras ici les 3 dernières recettes partagé par  la communauté .</p>
         
   <div class="recipe-container">
         {% for recipe in recipes %}
@@ -162,7 +158,7 @@
 	</div> <!-- end card-meta -->
 	
 	<h4 class="card-title">{{ recipe.name }}</h4>
-     <p class="card-text">{{ recipe.description|slice(0, 100 ) ~ '...' }}</p>
+     <p class="card-text">{{ recipe.description|slice(0, 300 ) ~ '...' }} <a class="btn-readMore" href="{{ path('security.login') }}" role="button">Lire la suite</a></p>
 </div>  <!-- end recipe-card -->
          
         {% endfor %}

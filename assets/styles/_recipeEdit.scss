@@ -1,15 +1,14 @@
 .updateRecipe-container {
 
   .updateRecipe-title{
-  
     font-size: 3rem;
     font-weight: 500;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
     padding-bottom: 50px;
     letter-spacing: 1px;
-    width: 80%;
-    line-height: 50px;
+    width: 70%;
+    line-height: 60px;
    }
 
   .updateRecipe-box {
@@ -96,7 +95,9 @@
   
 .vich-image{ 
   margin-top: 10px;
-
+  a:last-child { 
+    display: none;
+  }
   label { 
     display: none;
   }
@@ -112,17 +113,20 @@
   }
 }
       #recipe_submit {
-        margin-top: 50px;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: antiquewhite;
-        font-weight: 700;
-        border: 2px solid salmon;
-        background-color: salmon;
-        padding: 15px;
-        border-radius: 8px;
-        transition: 300ms ease-in;
+        font-family: "Poppins", sans-serif;
+        background-color: #07393e;
+        height: 65px;
+        border-radius: 25px;
+        font-size: 22px;
+        padding: 15px 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 30px;
+        margin-top: 40px;
+        border: none;
         cursor: pointer;
+        transition: 300ms ease-in-out;
+        color: antiquewhite;
       }
       #recipe_submit:hover {
         transform: scale(1.1);
