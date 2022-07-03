@@ -13,16 +13,11 @@
       <h1 class="recipeIndex-title">
         Mes recettes
       </h1>
-      {# <h4>Il n'y a pas de recette</h4> #}
-      {# <a href="{{ path('recipe.new') }}" class="btn btn-primary"> Créer une recette</a> #}
-      {# <h2> <a href="{{ path('recipe.new') }}" class="recipeIndexTitle"> Créer une recette</a></h2 #}
-
-      {% for message in app.flashes('success') %}
+            {% for message in app.flashes('success') %}
         <div class="alert alert-success">
           {{ message }}
         </div>
       {% endfor %}
-
       <div class="countIndex-title">
         <h2>
           Il y'a {{ recipes.getTotalItemCount }} recette(s) cliquez <span>
@@ -69,18 +64,8 @@
                       stroke-linejoin="round" />
                   </svg>Pour {{ recipe.nbPeople }} px
                 </li>
-                {# <li> 
-          {{ recipe.createdAt|date('d/m/y') }}
-          </li> #}
               </ul>
             </div>
-
-            <!-- end card-meta -->
-            {# {% endfor %}
-             <div class="navigation d-flex justify-content-center mt-4">
-                {{ knp_pagination_render(recipes) }}
-            </div> #}
-
             <h4 class="card-title">
               {{ recipe.name }}
             </h4>
@@ -119,7 +104,6 @@
                 Supprimer
               </a>
             </div>
-            {# <p class="card-text">{{ recipe.description|slice(0, 100 ) ~ '...' }}</p> #}
           </div> <!-- end recipe-card -->
         {% endfor %}
       </div>

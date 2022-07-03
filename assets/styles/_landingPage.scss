@@ -1,187 +1,248 @@
-.landingPage {
-  .backgroundImage {
-    width: 100%;
-    background-image: url("../images/pexels-william-choquette-2641886.jpg");
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
+header {
+  .containerHero {
+    .backgroundImage {
       width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 15%;
-    margin: 0 auto;
-    text-align: center;
-    align-items: center;
-    gap: 70px;
-    z-index: 1000;
-
-    .landingPageTitle {
-      font-size: 7rem;
-      color: #f9e8e7;
-      letter-spacing: 1px;
-      width: 40%;
-      line-height: 95%;
-      z-index: 1000;
-      span {
-        font-style: italic;
-        z-index: 1000;
+      background-image: url("../images/pexels-william-choquette-2641886.jpg");
+      height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
       }
     }
-    .paragraph {
-      padding-bottom: 40px;
-      font-size: 2rem;
-      width: 60%;
-      color: white;
-      z-index: 1000;
-    }
-    .btnBox {
+    .container {
       display: flex;
-      gap: 40px;
+      flex-direction: column;
+      position: relative;
+      top: 15%;
+      margin: 0 auto;
+      text-align: center;
+      align-items: center;
+      gap: 70px;
+      z-index: 1000;
 
-      .btn-registration {
-        font-family: "Poppins", sans-serif;
-        background-color: #f1746d;
-        height: 65px;
-        border-radius: 25px;
-        font-size: 22px;
-        padding: 15px 20px;
-        font-weight: 600;
+      .landingPageTitle {
+        font-size: 7rem;
+        color: #f9e8e7;
         letter-spacing: 1px;
-        line-height: 30px;
-        border: none;
-        cursor: pointer;
-        transition: 300ms ease-in-out;
-
-        a {
-          color: white;
+        width: 40%;
+        line-height: 95%;
+        z-index: 1000;
+        @media screen and (max-width: 1200px) {
+          font-size: 6rem;
+          width: 60%;
+        }
+        @media screen and (max-width: 600px) {
+          font-size: 4rem;
+          width: 60%;
+        }
+        @media screen and (max-width: 450px) {
+          font-size: 3rem;
+          width: 70%;
+        }
+        span {
+          font-style: italic;
+          z-index: 1000;
         }
       }
-      .btn-registration:hover {
-        transform: scale(1.1);
-        transition: 300ms ease-in-out;
-      }
+      .paragraph {
+        padding-bottom: 40px;
+        font-size: 2rem;
+        width: 60%;
+        color: white;
+        z-index: 1000;
 
-      .btn-login {
-        font-family: "Poppins", sans-serif;
-        background-color: #07393e;
-        height: 65px;
-        border-radius: 25px;
-        font-size: 22px;
-        padding: 15px 20px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        line-height: 30px;
-        border: none;
-        cursor: pointer;
-        transition: 300ms ease-in-out;
-
-        a {
-          color: white;
+        @media screen and (max-width: 700px) {
+          font-size: 1.5rem;
+          width: 80%;
+        }
+        @media screen and (max-width: 500px) {
+          font-size: 1.2rem;
+          width: 80%;
         }
       }
-      .btn-login:hover {
-        transform: scale(1.1);
-        transition: 300ms ease-in-out;
+      .btnBox {
+        display: flex;
+        gap: 40px;
+        @media screen and (max-width: 600px) {
+          gap: 20px;
+        }
+        .btn-registration {
+          font-family: "Poppins", sans-serif;
+          background-color: #f1746d;
+          height: 65px;
+          border-radius: 25px;
+          font-size: 22px;
+          padding: 15px 20px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          line-height: 30px;
+          border: none;
+          cursor: pointer;
+          transition: 300ms ease-in-out;
+          @media screen and (max-width: 600px) {
+            padding: 10px 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 20px;
+          }
+          a {
+            color: white;
+            @media screen and (max-width: 600px) {
+              font-size: 1rem;
+            }
+          }
+        }
+        .btn-registration:hover {
+          transform: scale(1.1);
+          transition: 300ms ease-in-out;
+        }
+
+        .btn-login {
+          font-family: "Poppins", sans-serif;
+          background-color: #07393e;
+          height: 65px;
+          border-radius: 25px;
+          font-size: 22px;
+          padding: 15px 20px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          line-height: 30px;
+          border: none;
+          cursor: pointer;
+          transition: 300ms ease-in-out;
+          @media screen and (max-width: 600px) {
+            padding: 10px 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 20px;
+          }
+
+          a {
+            color: white;
+            @media screen and (max-width: 600px) {
+              font-size: 1rem;
+            }
+          }
+        }
+        .btn-login:hover {
+          transform: scale(1.1);
+          transition: 300ms ease-in-out;
+        }
       }
     }
-  }
 
-  .arrows {
-    width: 100px;
-    height: 72px;
-    position: absolute;
-    left: 47%;
-    bottom: 30px;
+    .arrows {
+      width: 100px;
+      height: 72px;
+      position: absolute;
+      left: 49%;
+      bottom: 30px;
+    }
 
- 
-  }
+    .arrows path {
+      stroke: antiquewhite;
+      fill: transparent;
+      stroke-width: 2px;
+      animation: arrow 2s infinite;
+      -webkit-animation: arrow 2s infinite;
+    }
 
-  .arrows path {
-    stroke: antiquewhite;
-    fill: transparent;
-    stroke-width: 2px;
-    animation: arrow 2s infinite;
-    -webkit-animation: arrow 2s infinite;
-  }
+    @keyframes arrow {
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
 
-  @keyframes arrow {
-    0% {
-      opacity: 0;
+    @-webkit-keyframes arrow /*Safari and Chrome*/ {
+      0% {
+        opacity: 0;
+      }
+      40% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
     }
-    40% {
-      opacity: 1;
-    }
-    80% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
 
-  @-webkit-keyframes arrow /*Safari and Chrome*/ {
-    0% {
-      opacity: 0;
+    .arrows path.a1 {
+      animation-delay: -1s;
+      -webkit-animation-delay: -1s; /* Safari 和 Chrome */
     }
-    40% {
-      opacity: 1;
-    }
-    80% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
 
-  .arrows path.a1 {
-    animation-delay: -1s;
-    -webkit-animation-delay: -1s; /* Safari 和 Chrome */
-  }
+    .arrows path.a2 {
+      animation-delay: -0.5s;
+      -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
+    }
 
-  .arrows path.a2 {
-    animation-delay: -0.5s;
-    -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
-  }
-
-  .arrows path.a3 {
-    animation-delay: 0s;
-    -webkit-animation-delay: 0s; /* Safari 和 Chrome */
+    .arrows path.a3 {
+      animation-delay: 0s;
+      -webkit-animation-delay: 0s; /* Safari 和 Chrome */
+    }
   }
 
   .description {
     height: 80vh;
     background-color: #07393e;
     position: relative;
-    .descriptionContainer {
-      .descriptionParagraph {
-        position: absolute;
 
-        width: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2rem;
-        color: antiquewhite;
-        line-height: 65px;
-        text-align: center;
-        border-top: 1px solid salmon;
-        border-bottom: 1px solid salmon;
-        padding: 80px;
-        border-radius: 2px;
+    .descriptionParagraph {
+      position: absolute;
+
+      width: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2rem;
+      color: antiquewhite;
+      line-height: 65px;
+      text-align: center;
+      border-top: 1px solid salmon;
+      border-bottom: 1px solid salmon;
+      padding: 80px;
+      border-radius: 2px;
+      @media screen and (max-width: 1400px) {
+        width: 70%;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 80%;
+      }
+      @media screen and (max-width: 800px) {
+        width: 90%;
+        font-size: 1.5rem;
+        line-height: 55px;
+      }
+      @media screen and (max-width: 700px) {
+        width: 90%;
+        font-size: 1.2rem;
+        line-height: 45px;
+      }
+      @media screen and (max-width: 500px) {
+        width: 100%;
+        font-size: 1.2rem;
+        line-height: 35px;
+        padding: 40px;
       }
     }
   }
@@ -190,7 +251,13 @@
     .img-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-
+      @media screen and (max-width: 1200px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+      }
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
       .span-text {
         font-size: 6rem;
         width: 50%;
@@ -206,6 +273,9 @@
         transform: translate(-50%, -50%);
         position: absolute;
         z-index: 50;
+        @media screen and (max-width: 1400px) {
+          font-size: 5rem;
+        }
       }
       .picture {
         height: 100vh;
@@ -243,17 +313,21 @@
   }
 
   .repeatConnexion {
+    height: 80vh;
     .grid-container-connexion {
+      height: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-
+      @media screen and (max-width: 1000px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
       .left-img-container {
         background-image: url(../images/brooke-lark-min.jpg);
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        height: 800px;
       }
 
       .right-btn-container {
@@ -272,6 +346,9 @@
           font-weight: 600;
           padding-bottom: 30px;
           background-color: transparent;
+          @media screen and (max-width: 500px) {
+            font-size: 1.5rem;
+          }
         }
         .btnBox {
           font-size: 2rem;
@@ -279,56 +356,63 @@
           font-weight: 800;
           letter-spacing: 2px;
           display: flex;
-  
-        
 
-
-         .btn-registration {
-        font-family: "Poppins", sans-serif;
-        background-color: #f1746d;
-        height: 65px;
-        border-radius: 25px;
-        font-size: 22px;
-        padding: 15px 20px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        line-height: 30px;
-        border: none;
-        cursor: pointer;
-        transition: 300ms ease-in-out;
-
-        a {
-          color: white;
-        }
-      }
-      .btn-registration:hover {
-        transform: scale(1.1);
-        transition: 300ms ease-in-out;
-      }
+          .btn-registration {
+            font-family: "Poppins", sans-serif;
+            background-color: #f1746d;
+            height: 65px;
+            border-radius: 25px;
+            font-size: 22px;
+            padding: 15px 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 30px;
+            border: none;
+            cursor: pointer;
+            transition: 300ms ease-in-out;
+            @media screen and (max-width: 1000px) {
+              font-size: 1rem;
+              padding: 10px 15px;
+              height: 50px;
+            }
+            a {
+              color: white;
+            }
+          }
+          .btn-registration:hover {
+            transform: scale(1.1);
+            transition: 300ms ease-in-out;
+          }
 
           .btn-login {
-        font-family: "Poppins", sans-serif;
-        background-color:#f9e8e7;
-        height: 65px;
-        border-radius: 25px;
-        font-size: 22px;
-        padding: 15px 20px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        line-height: 30px;
-        border: none;
-        cursor: pointer;
-        transition: 300ms ease-in-out;
-        margin-left: 40px;
+            font-family: "Poppins", sans-serif;
+            background-color: #f9e8e7;
+            height: 65px;
+            border-radius: 25px;
+            font-size: 22px;
+            padding: 15px 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 30px;
+            border: none;
+            cursor: pointer;
+            transition: 300ms ease-in-out;
+            margin-left: 40px;
+            @media screen and (max-width: 1000px) {
+              font-size: 1rem;
+              padding: 10px 15px;
+              height: 50px;
+              margin-left: 20px;
+            }
 
-        a {
-          color: white;
-        }
-      }
-      .btn-login:hover {
-        transform: scale(1.1);
-        transition: 300ms ease-in-out;
-      }
+            a {
+              color: white;
+            }
+          }
+          .btn-login:hover {
+            transform: scale(1.1);
+            transition: 300ms ease-in-out;
+          }
         }
       }
     }
@@ -336,9 +420,12 @@
 
   .social {
     display: grid;
-    grid-template-columns: 50% 50%;
-    height: fit-content;
-
+    grid-template-columns: 1fr 1fr;
+    height: 80vh;
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
     .socialNetwork {
       background-image: linear-gradient(
         to right,
@@ -352,10 +439,17 @@
       align-items: center;
       position: relative;
       gap: 100px;
+      @media screen and (max-width: 1000px) {
+        gap: 5px;
+        padding-top: 50px;
+      }
       .socialTitle {
         width: 50%;
         display: flex;
         flex-direction: column;
+        @media screen and (max-width: 1400px) {
+          width: 80%;
+        }
 
         .likeUs {
           font-size: 5rem;
@@ -364,44 +458,79 @@
           font-style: italic;
           letter-spacing: 1px;
           line-height: 100px;
+          @media screen and (max-width: 1000px) {
+            font-size: 3rem;
+          }
+          @media screen and (max-width: 800px) {
+            font-size: 2rem;
+          }
+          @media screen and (max-width: 450px) {
+            font-size: 1.5rem;
+          }
         }
         .followUs {
           font-size: 2rem;
           color: #07393e;
           margin-top: 20px;
+          
           letter-spacing: 1px;
+          @media screen and (max-width: 1000px) {
+            font-size: 1.5rem;
+          }
+          @media screen and (max-width: 700px) {
+            font-size: 1rem;
+            padding-bottom: 50px;
+          }
         }
       }
 
       .social-icons {
-        .socialList {
-          display: flex;
-          justify-content: space-between;
+        position: relative;
 
-          .logo-insta {
-            padding-right: 50px;
+        .logo-insta {
+          padding-top: 50px;
+
+          @media screen and (max-width: 1000px) {
+            padding-top: 20px;
+            img {
+              width: 100px;
+              height: 100px;
+            }
+          }
+          @media screen and (max-width: 500px) {
+   
+            img {
+              width: 80px;
+              height: 80px;
+          
+            }
+          }
+        } }
+        .slogan {
+          position: absolute;
+          bottom: 0;
+          color: #07393e;
+          padding-bottom: 20px;
+          font-size: 2rem;
+          letter-spacing: 1px;
+          font-weight: 600;
+          @media screen and (max-width: 700px) {
+            font-size: 1rem;
+          }
+          .jpn {
+            color: #f1746d;
+            font-weight: 600;
+            letter-spacing: 2px;
+            @media screen and (max-width: 700px) {
+              font-size: 1rem;
+            }
           }
         }
-      }
-      .slogan {
-        position: absolute;
-        bottom: 0;
-        color: #07393e;
-        padding-bottom: 20px;
-        font-size: 2rem;
-        letter-spacing: 1px;
-        font-weight: 600;
-        .jpn {
-          color: #f1746d;
-          font-weight: 600;
-          letter-spacing: 2px;
-        }
-      }
+     
     }
     .socialPictures {
       background-image: url(../images/4263211.jpg);
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 5px 0px;
-      height: 800px;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;

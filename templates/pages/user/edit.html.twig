@@ -8,7 +8,7 @@
   <section class="information-edit-container">
     <div class="grid-edit-container">
       <h1 class="edit-h1">
-        Modifier mes informations personnelles 
+        Modifier mes informations personnelles
       </h1>
       {% for message in app.flashes('warning') %}
         <div class="alert alert-warning mt-4">
@@ -19,9 +19,14 @@
       <div class="information-edit-form">
         {{ form(form) }}
       </div>
-             <div class="backToLandingPageBox">
-    <p> Tu aimes ton pseudo ? Alors ne change rien et clique  <span><a class="backToLandingPageLink" href="{{ path('home.index') }}"> ICI
-          </a> </span> </p> </div>
+      <div class="backToLandingPageBox">
+        <p>
+          Tu aimes ton pseudo ? Alors ne change rien et clique <span><a class="backToLandingPageLink"
+              href="{{ path('home.index') }}">
+              ICI
+            </a></span>
+        </p>
+      </div>
     </div>
     <div class="left-edit-img"></div>
   </section>

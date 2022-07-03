@@ -5,11 +5,6 @@
 {% block body %}
 
  {% if app.user %}
- 
-    {# {% block header %}
-      {% include 'commons/_header.html.twig' %}
-    {% endblock %} #}
-
 <section class="landingUserPage-container">
   <div class="gridLandingUser">
      <div class="containerHeroUser">
@@ -39,7 +34,7 @@
             <a class="ingredientPath" href="{{ path('ingredient.index') }}" role="button">
             <div class="img-grid-user"> 
               <img src="../assets/images/nordwood-themes-wtevVfGYwnM-unsplash.jpg" alt="ingrédients"></div></a>
-            <div class="text">Mes Ingrédients</div>
+            <div class="text">Mes ingrédients</div>
         </div>
            </div>
         <div class="gallerie-container w-2"> 
@@ -47,7 +42,7 @@
               <a class="recipesPath" href="{{ path('recipe.index') }}" role="button"> 
               <div class="img-grid-user"> 
                 <img src="../assets/images/edward-howell-yArvCsvY_kM-unsplash.jpg" alt="recettes"></div></a>
-              <div class="text">Mes Recettes</div>
+              <div class="text">Mes recettes</div>
         </div>
            </div>
         <div class="gallerie-container w-4"> 
@@ -55,14 +50,14 @@
                <a class="publicPath" href="{{ path('recipe.public') }}" role="button"> 
                <div class="img-grid-user"> 
             <img src="../assets/images/noah-buscher-8A7fD6Y5VF8-unsplash.jpg" alt="les Toqués"></div></a>
-          <div class="text">La Communauté</div>
+          <div class="text">La communauté</div>
         </div>
                </div>
                   <div class="gallerie-container w-3"> 
             <div class="gallerie-item h-4"> 
               <div class="img-grid-user"> 
              <a class="instaPath" href="https://www.instagram.com/arthy_republik/" role="button"  target="_blank"> <img src="../assets/images/pexels-victor-freitas-744780" alt="les Toqués"></div></a>
-          <div class="text">Follow US</div>
+          <div class="text">Follow us</div>
         </div>
                </div>
      </div>
@@ -85,8 +80,8 @@
         {% endfor %}
   </div> #}
    {% else %}
-  
-  <div class="container landingPage" >
+  <header>
+  <div class="container landingPage" id="arrowScrollUp" >
     
         <section class="containerHero">
          <div class="backgroundImage">
@@ -105,6 +100,7 @@
       <path class="a2" d="M0 20 L30 52 L60 20"></path>
       <path class="a3" d="M0 40 L30 72 L60 40"></path>
     </svg>
+    
     </section>   
 
     <section class="description">
@@ -195,8 +191,8 @@
       <div class="socialNetwork">
         <h4 class="socialTitle"><span class="likeUs"> Vous nous aimez ? <br></span><span class="followUs">Dite le nous sur Instagram</span></h4>
         <div class="social-icons">
-        <ul class="socialList">
-            <a href="https://www.instagram.com/arthy_republik/" target="_blank" class ="logo-insta" <li><img src="../assets/black-icons/insta.svg" alt="Logo instagram"></li> </a>
+      
+            <a href="https://www.instagram.com/arthy_republik/" target="_blank" class ="logo-insta" <><img src="../assets/black-icons/insta.svg" alt="Logo instagram"> </a>
                  
         </div>
       <p class="slogan "> <span> SPREAD</span><span> THE</span><span> WORD </span> <span> |</span> <span class="jpn">広がる</span></p>

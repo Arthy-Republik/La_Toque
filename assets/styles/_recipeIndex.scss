@@ -1,6 +1,6 @@
 .container-recipe {
- background-color: #fff5ee;
-padding-top: 50px;
+  background-color: #fff5ee;
+  padding-top: 50px;
 
   .recipeIndex-title {
     font-size: 3rem;
@@ -12,7 +12,7 @@ padding-top: 50px;
   }
   .countIndex-title h2 {
     padding-top: 20px;
-      font-size: 1.5rem;
+    font-size: 1.5rem;
     font-weight: 300;
     align-items: center;
     text-align: center;
@@ -155,7 +155,6 @@ padding-top: 50px;
   background-color: #fff5ee;
 
   .noReciperGrid-container {
-  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -214,7 +213,6 @@ padding-top: 50px;
       left: 50%;
       transform: translate(-50%, -50%);
       position: absolute;
- 
     }
     .noRecipePicture {
       width: 100%;
@@ -240,7 +238,6 @@ padding-top: 50px;
     .img-1 {
       background-image: url(../images/edgar-castrejon-1CsaVdwfIew-unsplash.jpg);
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
     }
     .img-2 {
       background-image: url(../images/pexels-tijana-drndarski.jpg);

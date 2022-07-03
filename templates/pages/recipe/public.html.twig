@@ -65,8 +65,13 @@
               {{ (recipe.description|slice(0, 300)) ~ '...' }}
             </p>
           </div> <!-- end recipe-card -->
+
+          
         {% endfor %}
       </div>
     {% endif %}
   </div>
+    {% block footer %}
+      {% include 'commons/_footer.html.twig' %}
+    {% endblock %}
 {% endblock %}

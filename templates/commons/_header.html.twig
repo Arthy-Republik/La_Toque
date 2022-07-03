@@ -1,46 +1,38 @@
         
-          {% if app.user %}
-          
+{% if app.user %}
+<header class="header-nav">
 <nav>
-  <div class="navbar-container">
-  <div class="leftSide-menu">
-      <ul class="navbar-ul">
-        <li class="navbar">
+    <div class="toggle">
+      <i class="fas fa-bars ouvrir"></i>
+      <i class="fas fa-times fermer"></i>
+    </div>
+      <ul class="menu">
+        <li class="navbar item1">
           <a class="nav-link active" href="{{ path('home.index') }}">Accueil
           </a>
-          </li>
-             <li class="nav-item">
+        </li>
+        <li class="nav-item item2">
           <a class="nav-link lead" href="{{ path('ingredient.index') }}">Mes ingrédients
           </a>
-          </li>
-           </li>
-             <li class="nav-item">
+        </li>
+        <li class="nav-item item3">
           <a class="nav-link lead" href="{{ path('recipe.index') }}">Mes recettes
           </a>
-          </li>
-           <li class="nav-item">
+        </li>
+        <li class="nav-item item4">
           <a class="nav-link lead" href="{{ path('recipe.public') }}">La communauté
           </a>
-          </li>
-  </ul>
-   
-          </div>
-             <div class="rightSide-menu">
-          <ul class="rightNav-ul">
-            <li> <a class="rightSide-menu-update" href="{{ path('user.edit' , {id : app.user.id}) }}" >Modifier mes informations</a></li>
-            <li><a class="rightSide-menu-deco" href=" {{ path('security.logout') }}">Déconnexion</a></li>
-          </ul>
-          </div>
-              {% endif %}
-    
+        </li>
+        <li  class="nav-item item5"> 
+          <a class="rightSide-menu-update" href="{{ path('user.edit' , {id : app.user.id}) }}" >Modifier mes informations
+          </a>
+        </li>
+        <li  class="nav-item item6">
+          <a class="menu-deco-btn" role="button " href=" {{ path('security.logout') }}">Déconnexion
+          </a>
+        </li>
+      </ul>
 
-   
-    
-       
-      
-  
-      
-      </div>
-    </div>
-  </div>
+    {% endif %}
 </nav>
+</header>

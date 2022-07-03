@@ -96,7 +96,7 @@ class RecipeController extends AbstractController
    */
 
    // j'autorise uniquement l'accés a cette page si l'utilisateur courant est l'utilisateur qui correspond à la recette
-//   #[Security("is_granted('ROLE_USER') and user === recipe.getUser()")]
+    #[Security("is_granted('ROLE_USER') and user === recipe.getUser()")]
     #[Route('/recette/edition/{id}', name:'recipe.edit', methods:['GET', 'POST'])]
     public function edit(Recipe $recipe, Request $request, EntityManagerInterface $manager) : Response
     {
@@ -123,6 +123,8 @@ class RecipeController extends AbstractController
     /**
      * This controller allow us to delete a recipe
      */
+    
+    #[Security("is_granted('ROLE_USER') and user === recipe.getUser()")]
     #[Route('/recette/suppression/{id}', name:'recipe.delete', methods:['GET'])]
     public function delete(Recipe $recipe, EntityManagerInterface $manager) : Response
     {

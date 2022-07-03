@@ -1,6 +1,5 @@
 .updateRecipe-container {
-
-  .updateRecipe-title{
+  .updateRecipe-title {
     font-size: 3rem;
     font-weight: 500;
     align-items: left;
@@ -9,7 +8,7 @@
     letter-spacing: 1px;
     width: 70%;
     line-height: 60px;
-   }
+  }
 
   .updateRecipe-box {
     position: relative;
@@ -18,10 +17,9 @@
 
     form {
       background-color: #f9e8e7;
-   padding: 80px;
-   font-size: 1.2rem;
+      padding: 80px;
+      font-size: 1.2rem;
       .form-group {
-       
         padding-bottom: 20px;
         display: flex;
         flex-direction: column;
@@ -29,7 +27,6 @@
         label {
           padding-bottom: 10px;
           font-weight: 600;
-       
         }
         input {
           height: 25px;
@@ -37,8 +34,8 @@
           border: none;
           border-radius: 8px;
           padding-left: 5px;
-               }
-     
+        }
+
         #recipe_description {
           height: 200px;
           width: 90%;
@@ -52,17 +49,17 @@
           width: 5%;
         }
       }
-       
-      .form-groupFavorite { 
+
+      .form-groupFavorite {
         margin-top: 20px;
         display: flex;
-    
+
         margin-bottom: 20px;
 
-       label { 
-        padding-right:15px ;
-       }
-      #recipe_isFavorite { 
+        label {
+          padding-right: 15px;
+        }
+        #recipe_isFavorite {
           align-items: center;
           text-align: center;
         }
@@ -72,8 +69,6 @@
         font-weight: 600;
       }
 
-
- 
       #recipe_ingredients {
         font-size: 1.2rem;
         margin-top: 10px;
@@ -83,65 +78,60 @@
           margin-top: 10px;
         }
         label {
-         
-    margin-left: 5px;
-    margin-right: 10px;
+          margin-left: 5px;
+          margin-right: 10px;
         }
       }
-  .formLastPart { 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  
-.vich-image{ 
-  margin-top: 10px;
-  a:last-child { 
-    display: none;
-  }
-  label { 
-    display: none;
-  }
-  #recipe_imageFile_delete { 
-    display: none;
-  }
-  a img { 
-  
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
+      .formLastPart {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
 
-  }
-}
-      #recipe_submit {
-        font-family: "Poppins", sans-serif;
-        background-color: #07393e;
-        height: 65px;
-        border-radius: 25px;
-        font-size: 22px;
-        padding: 15px 20px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        line-height: 30px;
-        margin-top: 40px;
-        border: none;
-        cursor: pointer;
-        transition: 300ms ease-in-out;
-        color: antiquewhite;
-      }
-      #recipe_submit:hover {
-        transform: scale(1.1);
-        transition: 300ms ease-in;
+        .vich-image {
+          margin-top: 10px;
+          a:last-child {
+            display: none;
+          }
+          label {
+            display: none;
+          }
+          #recipe_imageFile_delete {
+            display: none;
+          }
+          a img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+          }
+        }
+        #recipe_submit {
+          font-family: "Poppins", sans-serif;
+          background-color: #07393e;
+          height: 65px;
+          border-radius: 25px;
+          font-size: 22px;
+          padding: 15px 20px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          line-height: 30px;
+          margin-top: 40px;
+          border: none;
+          cursor: pointer;
+          transition: 300ms ease-in-out;
+          color: antiquewhite;
+        }
+        #recipe_submit:hover {
+          transform: scale(1.1);
+          transition: 300ms ease-in;
+        }
       }
     }
   }
-}
-    .gridImg {
-      background-image: url(../images/pexels-dapurmelodi-1109197.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      padding-left: 20px;
-    }
-  
+  .gridImg {
+    background-image: url(../images/pexels-dapurmelodi-1109197.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 20px;
   }
-
+}

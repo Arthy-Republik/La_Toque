@@ -53,10 +53,14 @@
           value="{{ csrf_token('authenticate') }}" />
         <button type="submit" class="form-btn-login">Se connecter</button>
       </form>
-        <div class="noAccountBox">
-    <p> Pas encore de compte ? <span><a class="noAccountLink" href="{{ path('security.registration') }}">Inscrivez vous ici !
-          </a> </span> </p> </div>
+      <div class="noAccountBox">
+        <p>
+          Pas encore de compte ? <span><a class="noAccountLink"
+              href="{{ path('security.registration') }}">
+              Inscrivez vous ici !
+            </a></span>
+        </p>
+      </div>
     </div>
-  
   </section>
 {% endblock %}

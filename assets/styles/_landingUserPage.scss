@@ -6,15 +6,16 @@
     display: grid;
     grid-template-columns: 40% 60%;
     .containerHeroUser {
-      padding-top: 100px;
+      padding-top: 200px;
       position: relative;
       justify-content: center;
-     
+
       .titles {
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
+        gap: 10px;
 
         .landingPageUserH1 {
           font-size: 4rem;
@@ -32,19 +33,18 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-top: 60px;
+        padding-top: 100px;
         margin: 0 auto;
         width: 80%;
 
         p {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
           color: antiquewhite;
-          line-height: 35px;
+          line-height: 50px;
           text-align: center;
           border-top: 1px solid salmon;
           border-bottom: 1px solid salmon;
-          padding: 40px;
-          border-radius: 2px;
+          padding: 60px;
         }
       }
       .btn-user {
@@ -59,14 +59,13 @@
           transform: translate(-50%, +50%);
           bottom: 15%;
           width: fit-content;
-          
 
           .btn-logout {
             margin-top: 30px;
             font-family: "Poppins", sans-serif;
-            background-color:#f9e8e7;
+            background-color: #f9e8e7;
             height: 65px;
-           
+
             border-radius: 25px;
             font-size: 22px;
             padding: 15px 20px;
@@ -85,9 +84,9 @@
           .btn-update {
             margin-top: 30px;
             font-family: "Poppins", sans-serif;
-            background-color:#f1746d;
+            background-color: #f1746d;
             height: 65px;
-           
+
             border-radius: 25px;
             font-size: 22px;
             padding: 15px 20px;

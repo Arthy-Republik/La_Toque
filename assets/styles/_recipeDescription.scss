@@ -1,5 +1,5 @@
 main {
-    min-height: 93vh;
+  min-height: 93vh;
 
   .recipeDetails-container {
     height: inherit;
@@ -22,7 +22,6 @@ main {
 
       figure img {
         border-radius: 20px;
-       
       }
 
       .recipeCreationDate {
@@ -33,13 +32,11 @@ main {
     }
 
     .recipeDetails-rightContainer {
-      background-color:#ecf5f5;
+      background-color: #ecf5f5;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       padding: 50px 0;
-    
-      
 
       .recipeTime {
         display: flex;
