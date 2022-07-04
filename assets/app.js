@@ -1,3 +1,5 @@
+// Menu Burger//
+
 let toggle = document.querySelector('.toggle');
 let nav = document.querySelector('nav');
 

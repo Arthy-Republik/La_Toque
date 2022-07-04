@@ -1,5 +1,23 @@
 <footer>
+{% if app.user %}
   <div class="flex-footer">
+    <p class="signature">
+      A Code Save the Queen | Design
+    </p>
+
+ 
+     
+    <p class="slogan">
+      Stay Fresh, Eat Vegetables
+    </p>
+  
+    <p class="medoc">
+      Mentions Legales | RGPD
+    </p>
+        </div>
+        {% else %}
+      
+        <div class="flex-footer">
     <p class="signature">
       A Code Save the Queen | Design
     </p>
@@ -18,7 +36,7 @@
         <img src="../assets/black-icons/arrowUp.svg" alt="">
       </div>
          </a>
-  </div>
 
- 
+
+    {% endif %}
 </footer>

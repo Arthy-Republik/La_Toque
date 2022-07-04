@@ -4,7 +4,10 @@
   overflow: hidden;
   position: relative;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 0.8fr 1.2fr;
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
 
   .grid-edit-container {
     background-color: #07393e;
@@ -21,6 +24,10 @@
       text-align: center;
       padding-bottom: 80px;
       color: #f1746d;
+      @media screen and (max-width: 550px) {
+        font-size: 2rem;
+        width: 95%;
+        }
     }
     #user {
       border: 1px solid antiquewhite;
@@ -29,7 +36,9 @@
       gap: 20px;
       line-height: 50px;
       position: relative;
-
+      @media screen and (max-width: 550px) {
+        padding: 30px 20px;
+        }
       .form_label {
         font-size: 1.2rem;
         color: antiquewhite;
@@ -37,6 +46,9 @@
         text-align: left;
         text-align: left;
         padding-bottom: 20px;
+        @media screen and (max-width: 550px) {
+          font-size: 0.8rem;
+          }
       }
       .form-control {
         padding-left: 5px;
@@ -80,10 +92,16 @@
       font-weight: 500;
       font-size: 1rem;
       color: antiquewhite;
+      @media screen and (max-width: 550px) {
+        font-size: 0.8rem;
+        }
       a {
         color: #f1746d;
         font-size: 1rem;
         font-weight: bold;
+        @media screen and (max-width: 550px) {
+          font-size: 0.8rem;
+          }
       }
     }
   }
@@ -93,5 +111,8 @@
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
+    @media screen and (max-width: 1200px) {
+    display: none;
+    }
   }
 }

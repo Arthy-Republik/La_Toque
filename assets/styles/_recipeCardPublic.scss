@@ -11,6 +11,9 @@
     padding-bottom: 40px;
     font-weight: 500;
     letter-spacing: 1px;
+    @media screen and (max-width: 500px) {
+      font-size: 2rem;
+    }
   }
   .publicParagraph {
     padding-top: 30px;
@@ -23,6 +26,10 @@
     align-items: center;
     text-align: center;
     line-height: 50px;
+    @media screen and (max-width: 700px) {
+      font-size: 1.2rem;
+      line-height: 30px;
+    }
   }
   .recipe-container {
     display: grid;
@@ -42,6 +49,10 @@
       line-height: 1.5;
       width: 22rem;
       height: 600px;
+      @media screen and (max-width: 500px) {
+        width: 20rem;
+        height: 620px;
+      }
 
       figure {
         width: 100%;

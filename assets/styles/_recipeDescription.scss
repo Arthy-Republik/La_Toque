@@ -1,5 +1,5 @@
 main {
-  min-height: 93vh;
+  min-height: 92vh;
 
   .recipeDetails-container {
     height: inherit;
@@ -8,6 +8,10 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
+    @media screen and (max-width: 1000px) {
+display: block;
+padding: 10px;
+    }
     .recipeDetails-Leftontainer {
       display: flex;
       flex-direction: column;
@@ -22,6 +26,17 @@ main {
 
       figure img {
         border-radius: 20px;
+        width: 400px;
+        height: 380px;
+        @media screen and (max-width: 600px) {
+          width: 300px;
+          height: 300px;
+               }
+           
+    @media screen and (max-width: 500px) {
+     width: 200px;
+     height: 200px;
+          }
       }
 
       .recipeCreationDate {
@@ -102,6 +117,7 @@ main {
       .recipeDescription {
         display: flex;
         flex-direction: column;
+       
         p {
           padding: 10px;
           font-weight: 600;
@@ -114,6 +130,7 @@ main {
           text-align: justify;
           line-height: 25px;
           letter-spacing: 1px;
+         overflow: hidden;
         }
       }
       .recipeIngredientContainer {

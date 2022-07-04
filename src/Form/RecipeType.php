@@ -111,7 +111,9 @@ class RecipeType extends AbstractType
                 'attr' => [ 
                     'class' => 'form-control',
               ],
-                'label' => ' Prix ',
+                'label' => ' Prix 
+                en
+                ',
                 'label_attr' => [
                     'class' => 'form-label'
                 ],

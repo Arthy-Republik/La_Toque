@@ -1,7 +1,7 @@
 .container-ingredient {
   background: #f9e8e7;
-min-height: 93vh;
-padding-bottom: 50px;
+  min-height: 93vh;
+  padding-bottom: 50px;
   .noIngredient-title {
     font-size: 2rem;
     font-weight: 300;
@@ -10,12 +10,12 @@ padding-bottom: 50px;
     letter-spacing: 1px;
     padding-bottom: 10px;
   }
-  .btnBox-noIngredient { 
+  .btnBox-noIngredient {
     display: flex;
     justify-content: center;
     padding-top: 50px;
 
-  .btnNewIngredient { 
+    .btnNewIngredient {
       font-family: "Poppins", sans-serif;
       background-color: #07393e;
       height: 65px;
@@ -36,7 +36,8 @@ padding-bottom: 50px;
     .btnNewIngredient:hover {
       transform: scale(1.1);
       transition: 300ms ease-in-out;
-    }} 
+    }
+  }
   .ingredientIndex-title {
     font-size: 3rem;
     font-weight: 400;
@@ -45,7 +46,9 @@ padding-bottom: 50px;
     padding-top: 50px;
     padding-bottom: 20px;
     letter-spacing: 1px;
-  
+    @media screen and (max-width: 500px) {
+      font-size: 2rem;
+    }
   }
   .countIngredientIndex-title {
     font-size: 1.5rem;
@@ -54,8 +57,12 @@ padding-bottom: 50px;
     text-align: center;
     letter-spacing: 1px;
     padding-bottom: 50px;
+    @media screen and (max-width: 500px) {
+      font-size: 1rem;
+      padding: 20px;
+    }
     span a {
-      color: #07393E;
+      color: #07393e;
       font-weight: bold;
     }
   }
@@ -71,10 +78,12 @@ padding-bottom: 50px;
     padding: 50px;
     border-radius: 20px;
     margin: 0 auto;
-max-width: 1200px;
-background-color: #ecf5f5;
+    max-width: 1200px;
+    background-color: #ecf5f5;
+    @media screen and (max-width: 1200px) {
+      width: 1100px;
+    }
 
-   
     table {
       width: 100%;
       font-size: 1.2rem;
@@ -83,24 +92,26 @@ background-color: #ecf5f5;
       border-collapse: collapse;
       text-align: center;
       align-items: center;
-    
+      @media screen and (max-width: 1200px) {
+        font-size: 0.8rem;
+      }
 
       thead {
-        background-color: #07393E;
+        background-color: #07393e;
         color: #ecf5f5;
         font-weight: 400;
         letter-spacing: 1px;
-      
-        .col { 
+
+        .col {
           padding: 15px 30px;
         }
+       
       }
       tbody {
         th {
           padding: 30px;
-         
-        
         }
+        
         th,
         td {
           border: 1px solid #0f0f0f17;
@@ -113,15 +124,15 @@ background-color: #ecf5f5;
 
           .ingredientBtnIndex-update {
             display: inline-block;
-            color:  #07393E;
+            color: #07393e;
             font-weight: 600;
-            border: 1px solid #07393E;
+            border: 1px solid #07393e;
             border-radius: 5px;
             padding: 5px 10px;
             transition: 300ms ease-in-out;
           }
 
-          a:hover { 
+          a:hover {
             transform: scale(1.1);
             transition: 300ms ease-in-out;
           }
@@ -138,15 +149,13 @@ background-color: #ecf5f5;
             border-radius: 5px;
             padding: 5px 10px;
             transition: 300ms ease-in-out;
-           
-           
           }
-          a:hover { 
+          a:hover {
             transform: scale(1.1);
             transition: 300ms ease-in-out;
           }
         }
-        tr:nth-child(even) { 
+        tr:nth-child(even) {
           background-color: #bbd3d6;
         }
       }
