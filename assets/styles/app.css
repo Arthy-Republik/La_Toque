@@ -27,6 +27,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+h1 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 600;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -99,11 +104,11 @@ a {
   }
 }
 .header-nav nav .menu .menu-deco-btn {
-  border: 0;
   border-radius: 25px;
-  background-color: #f1746d;
+  border: 1px solid #f1746d;
   padding: 10px 20px;
-  margin-left: 100px;
+  margin-left: 50px;
+  color: #f1746d;
 }
 @media screen and (max-width: 1150px) {
   .header-nav nav .menu .menu-deco-btn {
@@ -724,9 +729,20 @@ header .social .socialPictures {
   height: 100vh;
   overflow: hidden;
 }
+@media screen and (max-width: 1400px) {
+  .landingUserPage-container {
+    overflow: auto;
+  }
+}
 .landingUserPage-container .gridLandingUser {
   display: grid;
   grid-template-columns: 40% 60%;
+}
+@media screen and (max-width: 1400px) {
+  .landingUserPage-container .gridLandingUser {
+    grid-template-columns: 100%;
+    gap: 100px;
+  }
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser {
   position: relative;
@@ -734,6 +750,11 @@ header .social .socialPictures {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+@media screen and (max-width: 1400px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser {
+    padding-top: 50px;
+  }
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .titles {
   display: flex;
@@ -745,11 +766,21 @@ header .social .socialPictures {
   font-size: 4rem;
   color: antiquewhite;
 }
+@media screen and (max-width: 700px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser .titles .landingPageUserH1 {
+    font-size: 3rem;
+  }
+}
 .landingUserPage-container .gridLandingUser .containerHeroUser .titles .landingPageUserH2 {
   font-size: 2rem;
   color: antiquewhite;
   font-weight: 600;
   width: 60%;
+}
+@media screen and (max-width: 700px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser .titles .landingPageUserH2 {
+    font-size: 1.5rem;
+  }
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .landingPageUserparagraph {
   position: relative;
@@ -760,6 +791,11 @@ header .social .socialPictures {
   margin: 0 auto;
   width: 85%;
 }
+@media screen and (max-width: 700px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser .landingPageUserparagraph {
+    width: 95%;
+  }
+}
 .landingUserPage-container .gridLandingUser .containerHeroUser .landingPageUserparagraph p {
   font-size: 1.5rem;
   color: antiquewhite;
@@ -768,6 +804,13 @@ header .social .socialPictures {
   border-top: 1px solid #f1746d;
   border-bottom: 1px solid #f1746d;
   padding: 50px;
+}
+@media screen and (max-width: 700px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser .landingPageUserparagraph p {
+    font-size: 1rem;
+    padding: 30px;
+    line-height: 30px;
+  }
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user {
   width: 100%;
@@ -785,6 +828,16 @@ header .social .socialPictures {
   width: -moz-fit-content;
   width: fit-content;
 }
+@media screen and (max-width: 1400px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul {
+    bottom: 0%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul {
+    gap: 20px;
+  }
+}
 .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-logout {
   margin-top: 30px;
   font-family: "Poppins", sans-serif;
@@ -799,6 +852,18 @@ header .social .socialPictures {
   border: none;
   cursor: pointer;
   transition: 300ms ease-in-out;
+}
+@media screen and (max-width: 700px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-logout {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-logout {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    height: 40px;
+  }
 }
 .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-logout:hover {
   transform: scale(1.1);
@@ -819,6 +884,18 @@ header .social .socialPictures {
   cursor: pointer;
   transition: 300ms ease-in-out;
 }
+@media screen and (max-width: 700px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-update {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-update {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    height: 40px;
+  }
+}
 .landingUserPage-container .gridLandingUser .containerHeroUser .btn-user .btn-user-ul .btn-update:hover {
   transform: scale(1.1);
   transition: 300ms ease-in-out;
@@ -831,6 +908,12 @@ header .social .socialPictures {
   grid-column-gap: 15px;
   grid-row-gap: 15px;
   grid-auto-flow: dense;
+}
+@media screen and (max-width: 700px) {
+  .landingUserPage-container .gridLandingUser .grid-gallerie-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 300px);
+  }
 }
 .landingUserPage-container .gridLandingUser .grid-gallerie-container .gallerie-item {
   width: 100%;
@@ -850,6 +933,24 @@ header .social .socialPictures {
   text-align: center;
   cursor: pointer;
   z-index: 100;
+}
+@media screen and (max-width: 1700px) {
+  .landingUserPage-container .gridLandingUser .grid-gallerie-container .text {
+    font-size: 4rem;
+    line-height: 60px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .landingUserPage-container .gridLandingUser .grid-gallerie-container .text {
+    font-size: 3rem;
+    line-height: 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .landingUserPage-container .gridLandingUser .grid-gallerie-container .text {
+    font-size: 2rem;
+    line-height: 40px;
+  }
 }
 .landingUserPage-container .gridLandingUser .grid-gallerie-container .img-grid-user {
   width: 100%;
@@ -898,8 +999,9 @@ header .social .socialPictures {
 }
 .registration-container .registration-grid .registration-h1 {
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 600;
   padding-bottom: 80px;
+  color: #07393e;
 }
 @media screen and (max-width: 700px) {
   .registration-container .registration-grid .registration-h1 {
@@ -933,8 +1035,10 @@ header .social .socialPictures {
   background-color: transparent;
   border: none;
   margin-left: 20px;
-  border-bottom: 1px dashed gray;
+  border-bottom: 1px dashed #07393e;
   font-size: 1.2rem;
+  outline: none;
+  color: #07393e;
 }
 .registration-container .registration-grid #registration .form-control input {
   background-color: transparent;
@@ -1044,7 +1148,7 @@ header .social .socialPictures {
   font-size: 4rem;
   color: #07393e;
   text-align: center;
-  font-weight: 400;
+  font-weight: 600;
   padding: 30px;
   padding-bottom: 80px;
   line-height: 80px;
@@ -1065,6 +1169,9 @@ header .social .socialPictures {
   font-size: 1rem;
   font-weight: 400;
 }
+.login-container .login-grid .loginAlert {
+  font-weight: 600;
+}
 .login-container .login-grid .form-control {
   padding-left: 5px;
   background-color: transparent;
@@ -1072,6 +1179,8 @@ header .social .socialPictures {
   margin-left: 20px;
   border-bottom: 1px dashed #07393e;
   font-size: 1.2rem;
+  outline: none;
+  color: #07393e;
 }
 .login-container .login-grid input {
   background-color: transparent;
@@ -1153,7 +1262,7 @@ header .social .socialPictures {
 .information-edit-container .grid-edit-container .edit-h1 {
   font-size: 3rem;
   width: 80%;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
   padding-bottom: 80px;
   color: #f1746d;
@@ -1197,6 +1306,12 @@ header .social .socialPictures {
   border: none;
   margin-left: 20px;
   border-bottom: 1px dashed gray;
+  font-size: 1.2rem;
+  color: #f1746d;
+  outline: none;
+}
+.information-edit-container .grid-edit-container #user .form-control:active {
+  border: none;
 }
 .information-edit-container .grid-edit-container #user .form-control .input {
   background-color: transparent;
@@ -1730,6 +1845,20 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
 .container-recipe .container-btn .btn-moreRecipe:hover {
   transform: scale(1.1);
   transition: 300ms ease-in-out;
+}
+
+.backToHome {
+  background-color: #07393e;
+  width: 100%;
+  height: 8vh;
+  align-items: center;
+  padding: 30px;
+  padding-left: 50px;
+}
+.backToHome a {
+  color: antiquewhite;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .updateRecipe-container .updateRecipe-title {
@@ -2348,10 +2477,21 @@ main .recipeDetails-container .recipeDetails-Leftontainer {
   justify-content: space-around;
   margin: 50px;
 }
+@media screen and (max-width: 800px) {
+  main .recipeDetails-container .recipeDetails-Leftontainer {
+    gap: 20px;
+  }
+}
 main .recipeDetails-container .recipeDetails-Leftontainer .recipeDetailsTitle {
   font-size: 3rem;
   font-weight: 400;
   letter-spacing: 1px;
+}
+@media screen and (max-width: 800px) {
+  main .recipeDetails-container .recipeDetails-Leftontainer .recipeDetailsTitle {
+    font-size: 2rem;
+    padding-bottom: 20px;
+  }
 }
 main .recipeDetails-container .recipeDetails-Leftontainer figure img {
   border-radius: 20px;

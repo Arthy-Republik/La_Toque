@@ -54,13 +54,16 @@
         @media screen and (max-width: 450px) {
           font-size: 1.5rem;
         }
+       
       }
+     
       .menu-deco-btn {
-        border: 0;
+       
         border-radius: 25px;
-        background-color: #f1746d;
+        border: 1px solid #f1746d;
         padding: 10px 20px;
-        margin-left: 100px;
+        margin-left: 50px;
+        color: #f1746d;;
 
         @media screen and (max-width: 1150px) {
           margin-left: 20px;
@@ -68,7 +71,9 @@
         @media screen and (max-width: 1000px) {
           margin-left: 0;
         }
+      
       }
+      
     }
   }
   @media all and (max-width: 1020px) {
@@ -102,5 +107,7 @@
     .open .menu {
       transform: translateX(0);
     }
+  
   }
+
 }

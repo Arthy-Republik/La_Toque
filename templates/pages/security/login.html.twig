@@ -19,8 +19,8 @@
       {% endfor %}
 
       {% if error %}
-        <div class="alert alert-danger">
-          {{ error.messageKey|trans(error.messageData, 'security') }}
+        <div class="loginAlert alert-danger error" >
+         Mot de passe ou email invalide
         </div>
       {% endif %}
 

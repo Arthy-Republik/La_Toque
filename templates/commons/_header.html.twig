@@ -23,10 +23,10 @@
           <a class="nav-link lead" href="{{ path('recipe.public') }}">La communauté
           </a>
         </li>
-        <li  class="nav-item item5"> 
+        {# <li  class="nav-item item5"> 
           <a class="rightSide-menu-update" href="{{ path('user.edit' , {id : app.user.id}) }}" >Modifier mes informations
           </a>
-        </li>
+        </li> #}
         <li  class="nav-item item6">
           <a class="menu-deco-btn" role="button " href=" {{ path('security.logout') }}">Déconnexion
           </a>
@@ -34,5 +34,10 @@
       </ul>
 
     {% endif %}
+  
 </nav>
+  <div class="backToHome">
+         <a class="nav-link active" href="{{ path('home.index') }}">Accueil
+          </a>
+          </div>
 </header>

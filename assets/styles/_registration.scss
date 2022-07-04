@@ -20,8 +20,9 @@
 
     .registration-h1 {
       font-size: 3rem;
-      font-weight: 400;
+      font-weight: 600;
       padding-bottom: 80px;
+      color: #07393e;
       @media screen and (max-width: 700px) {
     padding-left: 20px;
     }
@@ -51,8 +52,10 @@
         background-color: transparent;
         border: none;
         margin-left: 20px;
-        border-bottom: 1px dashed gray;
+        border-bottom: 1px dashed #07393e;
         font-size: 1.2rem;
+        outline: none;
+        color: #07393e;
         input {
           background-color: transparent;
         }

@@ -20,7 +20,7 @@
     .edit-h1 {
       font-size: 3rem;
       width: 80%;
-      font-weight: 400;
+      font-weight: 600;
       text-align: center;
       padding-bottom: 80px;
       color: #f1746d;
@@ -57,10 +57,17 @@
         border: none;
         margin-left: 20px;
         border-bottom: 1px dashed gray;
-
+        font-size: 1.2rem;
+        color: #f1746d;
+        outline: none;
+            &:active { 
+              border: none;
+            }
         .input {
           background-color: transparent;
+         
         }
+     
       }
       .form-btn-edit {
         margin-top: 30px;
