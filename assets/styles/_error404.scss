@@ -1,0 +1,42 @@
+.errorContainer {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  height: 100vh;
+  background-color: #f9e8e7;
+  .textError {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f9e8e7;
+
+    gap: 50px;
+    position: relative;
+
+    h1 {
+      color: #07393e;
+      font-size: 8rem;
+      line-height: 95%;
+      padding-left: 50px;
+      width: 90;
+    }
+    p {
+      font-size: 1.2rem;
+      margin: 0 auto;
+      font-weight: 400;
+      position: absolute;
+      bottom: 5%;
+      padding-left: 50px;
+      span {
+        color: #07393e;
+        font-weight: 600;
+      }
+    }
+  }
+  .gif {
+    background-image: url("../images/pizza.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+  }
+}

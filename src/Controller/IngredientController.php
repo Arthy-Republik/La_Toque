@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class IngredientController extends AbstractController
@@ -18,8 +19,9 @@ class IngredientController extends AbstractController
         /**
      * This controller allow us to display an ingredient
      */
-    #[IsGranted('ROLE_USER')]
+   
     #[Route('/ingredient', name: 'ingredient.index', methods: ['GET'])]
+    #[IsGranted('ROLE_USER')]
     //injection de dépendance = injecter un service dans les parametres de la function ici ingredient repo qui se trouve dans le repo ingredient
     public function index(IngredientRepository $ingredientRepository, PaginatorInterface $paginator, Request $request): Response
     {
@@ -36,8 +38,9 @@ class IngredientController extends AbstractController
     /**
      * This controller allow us to create an ingredient
      */
-    #[IsGranted('ROLE_USER')]
+   
     #[Route('/ingredient/nouveau', name: 'ingredient.new', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_USER')]
     public function new(Request $request, EntityManagerInterface $manager) : Response
     {
         $ingredient = new Ingredient();
@@ -97,6 +100,7 @@ class IngredientController extends AbstractController
      /**
      * This controller allow us to delete an ingredient
      */
+
     #[Security("is_granted('ROLE_USER') and user === ingredient.getUser()")]
     #[Route('/ingredient/suppression/{id}', name:'ingredient.delete', methods:['GET'])]
     public function delete(EntityManagerInterface $manager, Ingredient $ingredient): Response

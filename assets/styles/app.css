@@ -765,6 +765,7 @@ header .social .socialPictures {
 .landingUserPage-container .gridLandingUser .containerHeroUser .titles .landingPageUserH1 {
   font-size: 4rem;
   color: antiquewhite;
+  letter-spacing: 1px;
 }
 @media screen and (max-width: 700px) {
   .landingUserPage-container .gridLandingUser .containerHeroUser .titles .landingPageUserH1 {
@@ -1852,7 +1853,7 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
   width: 100%;
   height: 8vh;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
   padding-left: 50px;
 }
 .backToHome a {
@@ -2212,6 +2213,11 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
   grid-template-columns: 40% 60%;
   background-color: #fff5ee;
 }
+@media screen and (max-width: 1000px) {
+  .reciperGrid-container {
+    grid-template-columns: 100%;
+  }
+}
 .reciperGrid-container .noReciperGrid-container {
   display: flex;
   flex-direction: column;
@@ -2268,6 +2274,21 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
   transform: translate(-50%, -50%);
   position: absolute;
 }
+@media screen and (max-width: 1400px) {
+  .reciperGrid-container .noRecipeImg .noRecipeText {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .reciperGrid-container .noRecipeImg .noRecipeText {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .reciperGrid-container .noRecipeImg .noRecipeText {
+    display: none;
+  }
+}
 .reciperGrid-container .noRecipeImg .noRecipePicture {
   width: 100%;
   background-size: cover;
@@ -2293,13 +2314,28 @@ main .containerUpdate-ingredient #ingredient_submit:hover {
   background-image: url(../images/edgar-castrejon-1CsaVdwfIew-unsplash.jpg);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+@media screen and (max-width: 1000px) {
+  .reciperGrid-container .noRecipeImg .img-1 {
+    display: none;
+  }
+}
 .reciperGrid-container .noRecipeImg .img-2 {
   background-image: url(../images/pexels-tijana-drndarski.jpg);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+@media screen and (max-width: 1000px) {
+  .reciperGrid-container .noRecipeImg .img-2 {
+    display: none;
+  }
+}
 .reciperGrid-container .noRecipeImg .img-3 {
   background-image: url(../images/pexels-aleksandar-pasaric-2940256.jpg);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+@media screen and (max-width: 1000px) {
+  .reciperGrid-container .noRecipeImg .img-3 {
+    display: none;
+  }
 }
 
 .newRecipe-container .newRecipe-title {
@@ -2618,6 +2654,89 @@ main .recipeDetails-container .recipeDetails-rightContainer .recipeIngredientCon
   font-weight: 300;
   font-size: 1.1rem;
   letter-spacing: 1px;
+}
+
+.errorContainer {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  height: 100vh;
+  background-color: #f9e8e7;
+}
+.errorContainer .textError {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f9e8e7;
+  gap: 50px;
+  position: relative;
+}
+.errorContainer .textError h1 {
+  color: #07393e;
+  font-size: 8rem;
+  line-height: 95%;
+  padding-left: 50px;
+  width: 90;
+}
+.errorContainer .textError p {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  font-weight: 400;
+  position: absolute;
+  bottom: 5%;
+  padding-left: 50px;
+}
+.errorContainer .textError p span {
+  color: #07393e;
+  font-weight: 600;
+}
+.errorContainer .gif {
+  background-image: url("../images/pizza.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.errorContainer-403 {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  height: 100vh;
+  background-color: #f9e8e7;
+}
+.errorContainer-403 .textError-403 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f9e8e7;
+  margin: 0 auto;
+  gap: 50px;
+  position: relative;
+}
+.errorContainer-403 .textError-403 h1 {
+  color: #07393E;
+  font-size: 8rem;
+  line-height: 95%;
+  padding-left: 50px;
+  width: 90;
+}
+.errorContainer-403 .textError-403 p {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  font-weight: 400;
+  position: absolute;
+  bottom: 5%;
+  padding-left: 50px;
+}
+.errorContainer-403 .textError-403 p span {
+  color: #07393E;
+  font-weight: 600;
+}
+.errorContainer-403 .gif-403 {
+  background-image: url("../images/gordon.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
 }
 
 footer {

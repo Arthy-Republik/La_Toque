@@ -15,7 +15,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
-#[UniqueEntity('name')]
+#[UniqueEntity('id')]
 #[ORM\Entity(repositoryClass: RecipeRepository::class),HasLifecycleCallbacks]
 #[Vich\Uploadable] 
 class Recipe

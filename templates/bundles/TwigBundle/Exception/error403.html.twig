@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Tut Tut Tut tut
+{% endblock %}
+
+{% block body %}
+  <section class="errorContainer-403">
+    <div class="textError-403">
+      <h1>
+        Accès interdit <br /> 止まる
+      </h1>
+
+      <p>
+        Pour revenir en lieu sûr, cliquez- <span><a class="backToSafePlace-403"
+            href="{{ path('home.index') }}">
+            ICI
+          </a></span>
+      </p>
+    </div>
+    <div class="gif-403"></div>
+  </section>
+{% endblock %}

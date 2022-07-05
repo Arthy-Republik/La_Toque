@@ -33,11 +33,12 @@
         </li>
       </ul>
 
-    {% endif %}
-  
-</nav>
+   {% else %}
   <div class="backToHome">
          <a class="nav-link active" href="{{ path('home.index') }}">Accueil
           </a>
           </div>
+
+   {% endif %}
+  </nav>
 </header>

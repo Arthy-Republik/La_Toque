@@ -161,7 +161,9 @@
   display: grid;
   grid-template-columns: 40% 60%;
   background-color: #fff5ee;
-
+  @media screen and (max-width: 1000px) {
+   grid-template-columns: 100%;
+  }
   .noReciperGrid-container {
     display: flex;
     flex-direction: column;
@@ -221,6 +223,15 @@
       left: 50%;
       transform: translate(-50%, -50%);
       position: absolute;
+      @media screen and (max-width: 1400px) {
+        font-size: 3rem;
+      }
+      @media screen and (max-width: 1200px) {
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
     }
     .noRecipePicture {
       width: 100%;
@@ -242,18 +253,29 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.2);
       }
+   
+
     }
     .img-1 {
       background-image: url(../images/edgar-castrejon-1CsaVdwfIew-unsplash.jpg);
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
     }
     .img-2 {
       background-image: url(../images/pexels-tijana-drndarski.jpg);
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
     }
     .img-3 {
       background-image: url(../images/pexels-aleksandar-pasaric-2940256.jpg);
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
     }
   }
 }

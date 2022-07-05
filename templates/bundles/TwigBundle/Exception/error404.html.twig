@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Oh no, la page is missing
+{% endblock %}
+
+{% block body %}
+  <section class="errorContainer">
+    <div class="textError">
+      <h1>
+        Oups !!<br />Cette <br /> Page <br />N'existe <br /> Pas...
+      </h1>
+      <p>
+        Pour revenir en lieu sûr, cliquez- <span><a class="backToSafePlace"
+            href="{{ path('home.index') }}">
+            ICI
+          </a></span>
+      </p>
+    </div>
+    <div class="gif"></div>
+  </section>
+{% endblock %}

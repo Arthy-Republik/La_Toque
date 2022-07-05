@@ -20,8 +20,9 @@ class RecipeController extends AbstractController
      * This controller dislay all recipes
      */
 
-    #[IsGranted('ROLE_USER')]
+  
     #[Route('/recette', name: 'recipe.index', methods:['GET'])]
+    #[IsGranted('ROLE_USER')]
     public function index(RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request): Response
     {
         {
@@ -54,8 +55,9 @@ class RecipeController extends AbstractController
     /**
     * This controller allow us to create a new recipe
     */
-    #[IsGranted('ROLE_USER')]
+   
     #[Route('/recette/creation', name:'recipe.new', methods:['GET', 'POST'])]
+    #[IsGranted('ROLE_USER')]
     public function new(Request $request, EntityManagerInterface $manager) : Response
     {
         $recipe = new Recipe();
