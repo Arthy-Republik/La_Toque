@@ -59,6 +59,9 @@ padding: 10px;
       flex-direction: column;
       justify-content: space-evenly;
       padding: 50px 0;
+      @media screen and (max-width: 1000px) {
+     height: auto;
+            }
 
       .recipeTime {
         display: flex;

@@ -495,16 +495,11 @@ header {
             img {
               width: 100px;
               height: 100px;
+              padding-bottom: 50px;
+      
             }
           }
-          @media screen and (max-width: 500px) {
-   
-            img {
-              width: 80px;
-              height: 80px;
-          
-            }
-          }
+        
         } }
         .slogan {
           position: absolute;

@@ -40,6 +40,7 @@ class RecipeController extends AbstractController
   /**
      * This controller display all the public recipes 
      */
+    
     #[Route('/recette/publique', 'recipe.public', methods: ['GET'])]
     public function public(RecipeRepository $recipeRepository, PaginatorInterface $paginator, Request $request ) : Response 
     {
